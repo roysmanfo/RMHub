@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMHub</title>
+    <link rel="stylesheet" href="static/style/main.css">
+    <link rel="stylesheet" href="static/style/keyframes.css">
+    <link rel="stylesheet" href="static/style/generalClasses.css">
+    <style defer>
+        #Card1{
+            background: url("static/img/typing.jpg") center center no-repeat;
+            background-size: cover;
+        }
+        #Card2{
+            background: url("static/img/bg-main_1.jpg") center center no-repeat;
+            background-size: cover;
+        }
+        #Card3{
+            background: url("static/img/bg-main_2.jpg") center center no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">RMHub</span>
+        <ul class="navList">
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+                <li>Home</li>
+            </a>
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+                <li>Categories</li>
+            </a>
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+                <li>About</li>
+            </a>
+        </ul>
+        <a href="#"><button class="mainLoginButton">Login</button></a>
+    </nav>
+    <main>
+        <section class="intro txt-center">
+            <span>This is the Hub</span>
+            <div class="block block_one"></div>
+            <div class="block block_two"></div>
+            <div class="block block_three"></div>
+            <div class="block block_four"></div>
+            <div class="block block_five"></div>
+        </section>
+        <h1 class="txt-center">Trova quel che ti serve</h1>
+        <p class="txt-center font-2 col-grass">Qui ci vanno delle card con i rispettivi link</p>
+
+        <section class="displayer">
+            <div class="displayer-item col-white" id="Card1">
+                <div>
+                    <p class="font-5  weight-7">Card 1</p>
+                    <p class="font-2 paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="displayer-item col-white" id="Card2">
+                <div>
+                    <p class="font-5  weight-7">Card 2</p>
+                    <p class="font-2 paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="displayer-item col-white" id="Card3">
+                <div>
+                    <p class="font-5  weight-7">Card 3</p>
+                    <p class="font-2 paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="static/scripts/app.js"></script>
+</body>
+</html>
