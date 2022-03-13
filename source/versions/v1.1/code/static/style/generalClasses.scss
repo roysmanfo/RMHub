@@ -1,0 +1,81 @@
+//Palettes
+$primary: rgb(39, 123, 201);
+$secondary: rgb(219, 52, 52);
+$grass: rgb(44, 199, 78);
+$info: #999;
+$yellow: rgb(235, 235, 18);
+$orange: orange;
+
+$shadow-light: #666;
+$shadow-dark: rgb(14, 14, 14);
+
+//colors
+.col-primary{
+    color: $primary;
+}
+.col-secondary{
+    color: $secondary;
+}
+.col-grass{
+    color: $grass;
+}
+.col-info{
+    color: $info;
+}
+.col-yellow{
+    color: $yellow;
+}
+.col-orange{
+    color: $orange;
+}
+.col-white{
+    color: #fff;
+}
+
+//font-size
+.font-1{
+    font-size: 1rem;
+}
+.font-2{
+    font-size: 1.25rem;
+}
+.font-3{
+    font-size: 1.5rem;
+}
+.font-4{
+    font-size: 1.75rem;
+}
+.font-5{
+    font-size: 2rem;
+}
+.font-6{
+    font-size: 2.25rem;
+}
+.font-7{
+    font-size: 2.5rem;
+}
+.font-8{
+    font-size: 2.75rem;
+}
+.font-9{
+    font-size: 3rem;
+}
+
+//Font weight
+.weight-5{
+    font-weight: 500;
+}
+.weight-6{
+    font-weight: 600;
+}
+.weight-7{
+    font-weight: 700;
+}
+.weight-8{
+    font-weight: 800;
+}
+
+//text orientation
+.txt-center{
+    text-align: center;
+}
