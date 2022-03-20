@@ -1,11 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 /* Variables*/
-/* Light / Dark mode */
 /* Mixin */
 /* Styling*/
 html, body {
-  min-height: 150vh;
+  min-height: 100vh;
   margin: 0;
-  font-family: sans-serif;
+  font-family: Comfortaa;
   scroll-behavior: smooth;
 }
 
@@ -17,13 +17,14 @@ body {
 nav {
   position: fixed;
   z-index: 5;
-  width: calc(100vw - 3rem);
-  color: #000;
-  background: rgba(216, 216, 216, 0.6);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
           backdrop-filter: saturate(180%) blur(20px);
   padding: 5px 1rem;
   display: flex;
+  width: -moz-available;
+  width: -webkit-fill-available;
 }
 
 main {
@@ -71,7 +72,7 @@ h1 {
   width: -moz-max-content;
   width: max-content;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   background-image: linear-gradient(90deg, #277bc9, #db3434);
   background-size: 0% 3px;
   background-repeat: no-repeat;
@@ -94,6 +95,7 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   transition: 250ms;
+  font-family: Comfortaa;
 }
 
 .mainLoginButton:hover {
@@ -136,17 +138,127 @@ h1 {
   transition: 250ms ease;
 }
 
-.paragraph::before {
-  content: "";
-  height: 5px;
-  width: 100%;
-  background: #fff;
-}
-
 .displayer-item:hover {
   transform: scale(1.05);
 }
 
 .displayer-item:hover .paragraph {
   transform: translateX(0%);
+}
+
+/*HOME*/
+.HomeIntro {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.HomeIntro > * {
+  z-index: 1;
+}
+
+.HomeWellcome {
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 50px #666;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+@-webkit-keyframes bg-Move {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-Move {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+.HomeWellcomeTxt {
+  background-image: linear-gradient(90deg, #db3434, #ebeb12);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-size: 500%;
+  -webkit-animation: bg-Move infinite 10s;
+          animation: bg-Move infinite 10s;
+  margin-block: 0;
+}
+
+.HomeWellcomeTwo {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@-webkit-keyframes typing {
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+  }
+}
+@-webkit-keyframes blink {
+  100% {
+    background: transparent;
+  }
+}
+@keyframes blink {
+  100% {
+    background: transparent;
+  }
+}
+.typingAnim {
+  font-family: monospace;
+  position: relative;
+}
+
+.typingTxt {
+  margin: 5px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.typingTxt::before,
+.typingTxt::after {
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.typingTxt::before {
+  background: #fff;
+  -webkit-animation: typing 1.5s steps(24) forwards 1s;
+          animation: typing 1.5s steps(24) forwards 1s;
+}
+
+.typingTxt::after {
+  width: 0.125em;
+  background: #000;
+  -webkit-animation: typing 1.5s steps(24) forwards 1s, blink 300ms steps(24) infinite;
+          animation: typing 1.5s steps(24) forwards 1s, blink 300ms steps(24) infinite;
 }/*# sourceMappingURL=main.css.map */
