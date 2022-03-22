@@ -154,53 +154,7 @@ h1 {
   align-items: center;
 }
 
-.HomeIntro > * {
-  z-index: 1;
-}
-
 .HomeWellcome {
-  border-radius: 1rem;
-  padding: 3rem 2rem;
-  box-shadow: 0 0 50px #666;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-@-webkit-keyframes bg-Move {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-}
-
-@keyframes bg-Move {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-}
-.HomeWellcomeTxt {
-  background-image: linear-gradient(90deg, #db3434, #ebeb12);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-size: 500%;
-  -webkit-animation: bg-Move infinite 10s;
-          animation: bg-Move infinite 10s;
-  margin-block: 0;
-}
-
-.HomeWellcomeTwo {
   width: 80%;
   display: flex;
   flex-direction: column;
