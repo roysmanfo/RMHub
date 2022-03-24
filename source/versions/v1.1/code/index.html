@@ -1,3 +1,12 @@
+<!--
+/* 
+*   _______    ___  ___
+*   |      \  |   \/   |
+*   |  |___/  |        |
+*   |  |  \   |  |\/|  |
+*   |__|\__\  |__|  |__|
+*
+*/-->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -10,15 +19,15 @@
     <link rel="stylesheet" href="static/style/generalClasses.css">
     <style defer>
         #Card1{
-            background: url("static/img/typing.jpg") center center no-repeat;
+        background: #999 /*url("static/img/typing.jpg")*/ center center no-repeat;
             background-size: cover;
         }
         #Card2{
-            background: url("static/img/bg-main_1.jpg") center center no-repeat;
+           background: #999 /*url("static/img/bg-main_1.jpg")*/ center center no-repeat;
             background-size: cover;
         }
         #Card3{
-            background: url("static/img/bg-main_2.jpg") center center no-repeat;
+        background: #999 /*url("static/img/bg-main_2.jpg")*/ center center no-repeat;
             background-size: cover;
         }
     </style>
@@ -27,27 +36,30 @@
     <nav>
         <span class="logo">RMHub</span>
         <ul class="navList">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <a href="h.html" rel="noopener noreferrer">
                 <li>Home</li>
             </a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-                <li>Categories</li>
+            <a href="categories/index.html" target="_blank" rel="noopener noreferrer">
+                <li>Categorie</li>
             </a>
             <a href="http://" target="_blank" rel="noopener noreferrer">
-                <li>About</li>
+                <li>Docs</li>
+            </a>
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+                <li>Info</li>
             </a>
         </ul>
         <a href="#"><button class="mainLoginButton">Login</button></a>
     </nav>
     <main>
-        <section class="intro txt-center">
+        <header class="intro txt-center">
             <span>This is the Hub</span>
             <div class="block block_one"></div>
             <div class="block block_two"></div>
             <div class="block block_three"></div>
             <div class="block block_four"></div>
             <div class="block block_five"></div>
-        </section>
+        </header>
         <h1 class="txt-center">Trova quel che ti serve</h1>
         <p class="txt-center font-2 col-grass">Qui ci vanno delle card con i rispettivi link</p>
 
@@ -72,7 +84,7 @@
             </div>
         </section>
     </main>
-
-    <script src="static/scripts/app.js"></script>
+    <script src="static/scripts/main.js"></script>
+    <script src="static/scripts/Firebase.js"></script>
 </body>
 </html>
