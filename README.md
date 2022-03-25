@@ -9,8 +9,8 @@ Apart from admiring my great CSS and SCSS skills, you can download some apps tha
 - not having to struggle to create a password on your own using a password generator
 - plaiyng some minigames on our website
   
-Anyways in RMHum you can purchase some programs to support me and my work (if you are nice).
+Anyways in RMHub you can purchase some programs to support me and my work (if you are nice).
 
 ### How is RMHub built
 The website has been built using HTML and Sass (with a Scss compiler)  
-For the backend and the hosting I use Firebase Firestore and Firebase Hosting, and for analitycal reasons I have enabled Google Analytics.
+For the backend and the hosting I use Firebase Firestore and Firebase Hosting, and for statistical reasons I have enabled Google Analytics.
