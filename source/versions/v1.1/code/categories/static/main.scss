@@ -19,91 +19,35 @@ $shadow-dark: rgb(14, 14, 14);
 
 $bg-body: #fff;//dfdfdf 
 
-
-html,body{
-    min-height: 150vh;
-    margin: 0;
-    font-family: Comfortaa;
-    scroll-behavior: smooth;
-}
-body{
-    background: $bg-body;
-    color: $col;
-}
-nav{
-    position: fixed;
-    z-index: 5;
-    color: $col-nav;
-    background: $bg-nav;
-    backdrop-filter: saturate(180%) blur(20px);
-    padding: 5px 1rem;
-    display: flex;
-    width: -moz-available;
-    width: -webkit-fill-available;
-}
-main{
-    font-size: 1rem;
-    padding-top: 5rem;
-    display: flex;
-    height: 100%;
-}
-h1{
-    font-size: 3em;
-}
-
-//Classes
-.logo{
-    font-size: 2rem;
-    margin-block: auto;
-}
-
-.navList{
-    list-style: none;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-}
-.navList>a{
-    margin: 0 1rem;
-    padding-bottom: 5px;
-    width: max-content;
-    text-decoration: none;
-    color: $col-nav;
-    background-image: linear-gradient(90deg, $primary, $secondary);
-    background-size: 0% 3px;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    transition: 300ms;
-}
-.navList>a:hover{
-    background-size: 100% 3px;
-}
-.mainLoginButton{
-    background: $primary;
-    border: none;
-    outline: none;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 250ms;
-    font-family: Comfortaa;
-}
-.mainLoginButton:hover{
-    filter: brightness(90%);
-}
-
 .leftList{
-    width: min(30%, 20rem);
+    max-width: min(30%, 20rem);
+    min-width: max-content;
     padding: 1rem;
     position: relative;
-    border-right: solid 3px rgb(243, 243, 243);
 }
 .rightList{
     padding: 1rem;
+    margin-left: 1rem;
 }
 .options{
     position: fixed;
+    height: calc(100vh - 200px);
+}
+
+.leftUl{
+    list-style: none;
+    padding-left: 1rem;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+}
+.leftUl>li{
+    margin-block: .2rem;
+    padding: .5rem;
+    color: $info;
+    transition: 250ms;
+}
+.leftUl > li:hover{
+    color: #666;
+    cursor: pointer;
 }
