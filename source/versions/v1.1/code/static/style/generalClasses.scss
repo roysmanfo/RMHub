@@ -7,7 +7,10 @@ $yellow: rgb(235, 235, 18);
 $orange: orange;
 
 $shadow-light: #666;
-$shadow-dark: rgb(14, 14, 14);
+
+$shadow-dark: rgb(51, 51, 51);//$shadow-dark: hsl(0, 0%, 5%);
+$shadow-darker: rgb(34, 34, 34);//$shadow-darker: hsl(0, 0%, 10%);
+$shadow-darkest: rgb(17, 17, 17);//$shadow-darkest: hsl(0, 0%, 20%);
 
 //colors
 .col-primary{
@@ -30,6 +33,29 @@ $shadow-dark: rgb(14, 14, 14);
 }
 .col-white{
     color: #fff;
+}
+
+//Backgrounds
+.bg-primary{
+    background-color: $primary;
+}
+.bg-secondary{
+    background-color: $secondary;
+}
+.bg-grass{
+    background-color: $grass;
+}
+.bg-info{
+    background-color: $info;
+}
+.bg-yellow{
+    background-color: $yellow;
+}
+.bg-orange{
+    background-color: $orange;
+}
+.bg-white{
+    background-color: #fff;
 }
 
 //font-size
