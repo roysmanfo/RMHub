@@ -1,0 +1,1 @@
+//Inizializzazione di firebase
