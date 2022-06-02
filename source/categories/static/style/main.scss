@@ -34,8 +34,11 @@ main {
 
 .rightList {
   width: 100%;
-  padding: 1rem;
-  margin-left: 1rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+.rightList article{
+  margin-left: 2rem;
 }
 
 .options {
