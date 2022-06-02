@@ -43,7 +43,8 @@ main {
 
 .options {
   position: fixed;
-  height: calc(100vh - 200px);
+  height: 100%;
+  /*height: calc(100vh - 200px);*/
   display: flex;
   flex-direction: column;
 }
