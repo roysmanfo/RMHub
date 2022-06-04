@@ -7,10 +7,13 @@ document.getElementById("coinsCounter").innerHTML=("Money: $" + Coins);
 function smallWin(){
     Coins += SmallIncrement;
     document.getElementById("coinsCounter").innerHTML=("Money: $" + Coins);
+    document.getElementById("amount").innerHTML=("Guadagno: + " + SmallIncrement);
+    
 }
 function Jackpot(){
     Coins += BigIncrement;
     document.getElementById("coinsCounter").innerHTML=("Money: $" + Coins);
+    document.getElementById('amount').innerHTML=("Guadagno: + " + BigIncrement);
     document.getElementById('firstSlot').style.background = "gold";
     document.getElementById('secondSlot').style.background = "gold";
     document.getElementById('thirdSlot').style.background = "gold";
@@ -33,6 +36,7 @@ function pressStart(){
         document.getElementById("secondSlot").innerHTML=(valueSlotTwo);
         let valueSlotThree = Math.round( Math.random() * 9);
         document.getElementById("thirdSlot").innerHTML=(valueSlotThree);
+        
         if(valueSlotOne == valueSlotTwo && valueSlotTwo == valueSlotThree){
             win = true;
             winType = 'Jackpot';
@@ -45,9 +49,14 @@ function pressStart(){
             win = true;
             winType = 'small';
             smallWin()
+        }else if(valueSlotTwo == valueSlotThree){
+            win = true;
+            winType = 'small';
+            smallWin()
         }else{
             win = false;
             winType = null;
+            document.getElementById("amount").innerHTML=("Guadagno: - 100");
         }
     }
 }
