@@ -15,18 +15,20 @@
 
 .main-container{
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
+    width: 100%;
 }
 .container{
     display: flex;
-    justify-content: center;
-    margin: 0 0.5rem;
+    width: 100%;
+    margin-bottom: 4rem;
 }
-.types{
-    width: max(15rem, 25%);
-    border-right: #000 solid 1px;
-    text-align: center;
-    padding-left: 1rem;
+.theme-title{
+    width: clamp(15rem, 20rem, 25vw);
+}
+.title{
+    margin-left: 1rem;
 }
 .caption{
     height: 30%;
