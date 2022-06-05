@@ -56,7 +56,7 @@ section{
     font-size: medium;
     transition: 300ms;
 }
-.button:hover{background: #0049be;}
+.button:hover{background: #0049be;cursor: pointer;}
 
 
 /* Intro */

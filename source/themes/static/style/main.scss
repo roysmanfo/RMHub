@@ -1,0 +1,59 @@
+
+@keyframes presentation {
+    0% {
+        background-position: 50% 50%;
+    }
+    25% {
+        background-position: 0 50%; 
+    }
+
+    75% {
+        background-position: 100% 50%; 
+    }
+    
+}
+
+.main-container{
+    display: flex;
+    min-height: 100vh;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 0 0.5rem;
+}
+.types{
+    width: max(15rem, 25%);
+    border-right: #000 solid 1px;
+    text-align: center;
+    padding-left: 1rem;
+}
+.caption{
+    height: 30%;
+    width: 100%;
+    background: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+.card{
+    height: 250px;
+    width: 300px;
+    background: #000;
+    margin: 0 .5rem 1rem .5rem;
+    text-decoration: none;
+    border: #e5e5e5 solid 2px;
+}
+.inner-card{
+    height: 70%;
+    width: 100%;
+    transition: 250ms;
+}
+.card:hover .inner-card{
+    animation: presentation 5s ease-in-out infinite;
+}
+#PricingSoftware{
+    background: url("../img/pricing_software.png") center center no-repeat;
+    background-size: 130%;
+}

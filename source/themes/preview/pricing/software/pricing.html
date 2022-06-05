@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="prices" style="border-top: solid 4px  rgb(108, 255, 108);">
+            <h2 class="title">Standard</h2>
+            <span class="price">
+                <h1 style="font-size: 50px;">€0<h2>.00</h2></h1>
+            </span>
+            <p id="text1"></p>
+            <button class="buy">Purchase</button>
+        </div>
+        <div class="prices" style="border-top: solid 4px gold;">
+            <h2 class="title">Pro</h2>
+            <span class="price">
+                <h1 style="font-size: 50px;">€4<h2>.98</h2></h1>
+            </span>
+            <p id="text2"></p>
+            <button class="buy">Purchase</button>
+        </div>
+        <div class="prices" style="border-top: solid 4px rgb(0, 0, 150);">
+            <h2 class="title">Advanced</h2>
+            <span class="price">
+                <h1 style="font-size: 50px;">€9<h2>.99</h2></h1>
+            </span>
+            <p id="text3"></p>
+            <button class="buy">Purchase</button>
+        </div>
+    </section>
+    <footer style="position: absolute; bottom: 0; width: 100%;text-align: center;color: #000;">
+        <p>&copy; 2022 RMHub</p>
+    </footer>
+    <script>
+        var fill = "Inserisci qui il tuo testo";
+        for(i=1;1<3;i++){document.getElementById("text"+i).innerHTML=fill;}
+    </script>
+</body>
+</html>
