@@ -86,6 +86,13 @@ section{
 .source-shown{
     z-index: 2;
 }
+.source-files{
+    height: 32px;
+    margin-left: 1rem;
+}
+.language{
+    display: flex;
+}
 .details{
     background: #fff;
     color: #000;
