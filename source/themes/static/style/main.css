@@ -37,8 +37,8 @@
   width: clamp(15rem, 20rem, 25vw);
 }
 
-.title {
-  margin-left: 1rem;
+.theme-title p {
+  margin-inline: 1.5rem;
 }
 
 .caption {
@@ -78,5 +78,10 @@
 
 #LoginSocialMedia {
   background: url("../img/login_social_media.png") center center no-repeat;
+  background-size: 130%;
+}
+
+#LoginECommerce {
+  background: url("../img/login_ecommerce.png") center center no-repeat;
   background-size: 130%;
 }/*# sourceMappingURL=main.css.map */
