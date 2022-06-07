@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sasso Carta Forbice</title>
+        <link rel="stylesheet" href="Style.css">
+        <link rel="shortcut icon" href="/static/img/icons/favicon.ico">
+    </head>
+    <body>
+        <h1>SASSO CARTA FORBICE</h1>
+        <div class="game">
+            <div>
+                <h2 id="SceltaComputer">Il computer non ha scelto nulla</h2>
+                <div class="scelte">
+                    <button class="sasso scelta" onclick="Scelto(); Sasso()">Sasso</button>
+                    <button class="carta scelta" onclick="Scelto(); Carta()">Carta</button>
+                    <button class="forbice scelta" onclick="Scelto(); Forbice()">Forbice</button>
+                </div>
+            </div>
+            <div>
+                <div class="stats">
+                    <p id="gamesPlayed">Partite: 0</p>
+                    <p id="Score">Punteggio: 0</p>
+                    <p id="Wins">Vittorie: 0</p>
+                    <p id="Looses">Sconfitte: 0</p>
+                    <p id="Draws">Pareggi: 0</p>
+                    <p id="WinRate">Win rate: 0</p>
+                </div>
+            </div>
+        </div>
+        <section class="intro" id="intro">
+            <p>Sasso Carta Forbice</p>
+        </section>
+        <footer style="position: absolute; bottom: 0; width: 100%;">
+            <p>&copy; 2022 RMHub</p>
+        </footer>
+        <script src="Algorithm.js"></script>
+        <script src="/static/scripts/Firebase.js"></script>
+</body>
+</html>

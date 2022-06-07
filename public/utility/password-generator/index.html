@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="shortcut icon" href="/static/img/icons/favicon.ico">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        h1{text-align: center;}
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Password Generator</h1>
+    </nav>
+    <div class="allert" id="allert">
+        <p id="allertText">Non puoi inserire più di 64 caratteri</p>
+    </div>
+    <section>
+           <div style="display: inline-block; width: 100%;display: flex;justify-content: center;">
+                <input id="PasswordLeght" type="number" max="64" min="1" placeholder="Lunghezza password...">
+                <button aria-keyshortcuts="ctrl + k" onclick="newPassword()">Genera</button>
+            </div>
+            <h1 id="PasswordDisplayer">Password generata: </h1>   
+    </section>
+    <section class="intro" id="intro">
+        <p>Password Generator</p>
+    </section>
+    <footer style="position: absolute; bottom: 0; width: 100%;text-align: center;color: #000;">
+        <p>&copy; 2022 RMHub</p>
+    </footer>
+    <script src="algorithm.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+main {
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.nothing-to-see {
+  margin: auto;
+}/*# sourceMappingURL=main.css.map */

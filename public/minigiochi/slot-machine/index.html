@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="/static/img/icons/favicon.ico">
+</head>
+<body>
+    <nav>
+        <div class="title">Slot Machine</div>
+        <div class="scores">
+            <div id="amount">
+                Guadagno: 0
+            </div>
+        </div>
+        <div class="scores">
+            <div id="coinsCounter">
+                
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div>
+            <div class="game">
+                <div id="firstSlot" class="slot">0</div>
+                <div id="secondSlot" class="slot">0</div>
+                <div id="thirdSlot" class="slot">0</div>
+            </div>
+            <button class="button" id="startButton" onclick="pressStart()"></button>
+        </div>
+        
+    </section>
+    <section class="intro" id="intro">
+        <p>Slot Machine</p>
+    </section>
+    <footer style="position: absolute; bottom: 0; width: 100%;text-align: center;color: #000;">
+        <p>&copy; 2022 RMHub</p>
+    </footer>
+    <script src="JsAlgoritm.js" defer></script>
+    <script src="/static/scripts/Firebase.js"></script>
+</body>
+</html>

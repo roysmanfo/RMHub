@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+:root{
+    --primary: rgb(39, 123, 201);
+    --primary-2: rgb(156 207 255);
+    --secondary: rgb(219, 52, 52);
+    --secondary-2: rgb(255 145 145);
+    --purple: rgb(123, 39, 201);
+    --purple-2: rgb(204 149 255);
+}
+html{height: 100%; max-height: 100vh;}
+body{
+    margin: 0px;
+    height: -webkit-fill-available;
+    font-family: Comfortaa;
+    text-align: center;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    overflow-y: hidden;
+    display: grid;
+    place-items: center;
+}
+h1{color: #fff}
+.game{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scelte{display: inline-flex;margin: 70px auto 50px auto;font-weight: bolder;}
+.sasso{background: var(--purple);color: var(--purple-2);}
+.carta{background: var(--primary);color: var(--primary-2);}
+.forbice{background: var(--secondary);color: var(--secondary-2);}
+.scelta{font-family: Comfortaa;border: none;padding: 18px 20px;margin: 10px 30px;border-radius: 5px;font-size: 1rem;cursor: pointer;}
+.stats{display: grid;grid-template-areas: "one two"  "three four"  "five six";}
+.stats p{margin:10px 50px;background: #fff;border-radius: 5px;padding: 18px 20px;font-weight: bold;}
+.statsTable{display: flex;flex-wrap: wrap;}
+
+#gamesPlayed{grid-area: one;}
+#Score{grid-area: two;}
+#Wins{grid-area: three;}
+#Losses{grid-area: four;}
+#Draws{grid-area: five;}
+#WinRate{grid-area: six;}
+
+/* Intro */
+@keyframes intro {
+    0% {opacity: 0.8;}
+    100% {opacity: 0;display: none;z-index: -1;}
+}
+
+.intro{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    z-index: 1;
+    filter: opacity(0.8);
+    animation: intro 1s forwards 2s;
+}
+.intro p{
+    font-size: 3em;
+    font-weight: bold;
+}

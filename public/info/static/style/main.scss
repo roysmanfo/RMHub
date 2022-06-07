@@ -1,0 +1,41 @@
+@keyframes firstSlideHeader {
+    0% {transform: translateX(-300%);}
+    100% {transform: translateX(-7rem);}
+}
+@keyframes secondSlideHeader {
+    0% {transform: translateX(400%);}
+    100% {transform: translateX(7rem);}
+}
+html{overflow-x: hidden;}
+article{
+    background: #fff;
+    padding: 2em;
+    margin-block: 1em;
+    margin-inline: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 30px #999;
+    max-width: 60%;
+}
+.whoAmI{
+    padding: 1rem;
+    margin-inline: auto;
+}
+$picSize: 400px;
+.pic{
+    width: $picSize;
+    height: $picSize;
+    border-radius: 50%;
+    background: url('/static/img/profile.jpg') center center no-repeat;
+    background-size: cover;
+    transform: translateX(-7rem);
+    animation: firstSlideHeader 2s forwards cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+.description{
+    padding: 1.5rem;
+    background: #fff;
+    position: absolute;
+    border-radius: 1rem;
+    transform: translateX(7rem);
+    animation: secondSlideHeader 2.25s forwards cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}

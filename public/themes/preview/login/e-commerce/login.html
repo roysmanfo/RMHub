@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Login · Ecommerce</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="main-container"style="font-family: sans-serif;">
+	<div class="container">
+		<div class="first-container" style="background: #fff;display: inline-flex;">
+			<div class="div" style="width: 50%">
+				<h2>Login</h2>
+				<input type="email" name="Email" placeholder="Email"><br>
+				<input type="Password" name="Password" placeholder="Password"><br>
+				<div class="button" style="cursor: pointer;" >Submit</div>
+			</div>
+			<div  class="div" style="width: 50%">
+				<h2>Register</h2>
+				
+				<input type="email" name="Email" placeholder="Email"><br>
+				<input type="Password" name="Password" placeholder="Password"><br>
+			<div class="button" style="cursor: pointer;margin-bottom: 10px;" >Submit</div><br>
+			<a href="#"><br> Altri metodi</a>
+			</div>
+			
+		</div>
+	</div>
+	<section class="source">
+		<div class="details">
+			<p class="font-6 txt-center">Source</p>
+			<p class="font-3 language">Linguaggi: 
+				<img class="source-files" src="/static/img/icons/filetype-html.svg" alt="html file" title="html">
+				<img class="source-files" src="/static/img/icons/filetype-css.svg" alt="css file" title="css">
+			</p>
+			<a href="download/theme-login-ecommerce.zip"noopener noreferrer"><button class="download-btn">Download theme</button></a>
+		</div>
+		
+	</section>
+	<div class="download-img">
+		   <img src="\static\img\icons\download.svg" alt="download" height="32px"> 
+	</div>
+	<footer style="position: absolute; bottom: 0; width: 100%;text-align: center;color: #000;">
+		<p>&copy; 2022 RMHub</p>
+	</footer>
+	<script>
+		//jQuery
+		$(document).ready(function(){
+			$(".download-img").on('click', function(){
+				$(".source").toggleClass("source-shown")
+			});
+		});
+	</script>
+    <script src="/static/scripts/Firebase.js"></script>
+</body>
+</html>

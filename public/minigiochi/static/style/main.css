@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@-webkit-keyframes presentation {
+  0% {
+    background-position: 50% 50%;
+  }
+  25% {
+    background-position: 0 50%;
+  }
+  75% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes presentation {
+  0% {
+    background-position: 50% 50%;
+  }
+  25% {
+    background-position: 0 50%;
+  }
+  75% {
+    background-position: 100% 50%;
+  }
+}
+section {
+  display: flex;
+  justify-content: center;
+  margin: 0 0.5rem;
+}
+
+.card {
+  height: 250px;
+  width: 300px;
+  background: #000;
+  margin: 0 0.5rem 1rem 0.5rem;
+  text-decoration: none;
+}
+
+.inner-card {
+  height: 70%;
+  width: 100%;
+  transition: 250ms;
+}
+
+.card:hover .inner-card {
+  -webkit-animation: presentation 5s ease-in-out infinite;
+          animation: presentation 5s ease-in-out infinite;
+}
+
+.caption {
+  height: 30%;
+  width: 100%;
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+#SassoCartaForbice {
+  background: url("\\minigiochi\\static\\img\\pics\\Sasso_Carta_Forbice.png") center center no-repeat;
+  background-size: 130%;
+}
+
+#SlotMachine {
+  background: url("\\minigiochi\\static\\img\\pics\\Slot_Machine.png") center center no-repeat;
+  background-size: 130%;
+}/*# sourceMappingURL=main.css.map */
