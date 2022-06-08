@@ -81,6 +81,7 @@ $bg-body: #fff;//dfdfdf
 .displayer-item:hover .paragraph{
     transform: translateX(0%);
 }
+
 /*HOME*/
 
 .HomeIntro{
@@ -131,3 +132,4 @@ $typingSpeed: 1.5s;
         typing $typingSpeed steps($typingSteps) forwards 1s,
         blink 300ms steps($typingSteps) infinite,
 }
+
