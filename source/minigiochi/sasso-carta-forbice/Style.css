@@ -13,28 +13,28 @@ body{
     height: -webkit-fill-available;
     font-family: Comfortaa;
     text-align: center;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background: #000;
     overflow-y: hidden;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
 }
-h1{color: #fff}
+h1{color: #fff; font-size: 5rem;}
 .game{
-    height: 100%;
+    height: max-content;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .scelte{display: inline-flex;margin: 70px auto 50px auto;font-weight: bolder;}
-.sasso{background: var(--purple);color: var(--purple-2);}
-.carta{background: var(--primary);color: var(--primary-2);}
-.forbice{background: var(--secondary);color: var(--secondary-2);}
-.scelta{font-family: Comfortaa;border: none;padding: 18px 20px;margin: 10px 30px;border-radius: 5px;font-size: 1rem;cursor: pointer;}
+.scelta{font-family: Comfortaa;border: none;padding: 18px 20px;margin: 10px 30px;border-radius: 5px;font-size: inherit;cursor: pointer;}
 .stats{display: grid;grid-template-areas: "one two"  "three four"  "five six";}
 .stats p{margin:10px 50px;background: #fff;border-radius: 5px;padding: 18px 20px;font-weight: bold;}
 .statsTable{display: flex;flex-wrap: wrap;}
-
+#SceltaComputer{color: #fff;}
 #gamesPlayed{grid-area: one;}
 #Score{grid-area: two;}
 #Wins{grid-area: three;}
