@@ -20,8 +20,25 @@ main {
   margin-top: 1rem;
 }
 
-.rightList article {
-  margin-left: 2rem;
+.article-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.article-wrapper article {
+  color: #999;
+  margin: 1rem;
+  padding: 2rem;
+  background: #eee;
+  border-radius: 10px;
+}
+.article-wrapper article .font-3 {
+  border-bottom: solid 3px #ccc;
+  padding-bottom: 1rem;
+}
+.article-wrapper article a {
+  color: #666;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .options {
@@ -91,6 +108,4 @@ main {
 
 #themes-btn {
   background-color: rgb(44, 199, 78);
-}
-
-/*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */

@@ -37,10 +37,27 @@ main {
   padding-top: 1rem;
   margin-top: 1rem;
 }
-.rightList article{
-  margin-left: 2rem;
-}
+.article-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
+  article{
+    color: #999;
+    margin: 1rem;
+    padding: 2rem;
+    background: #eee;
+    border-radius: 10px;
+    .font-3{
+      border-bottom: solid 3px #ccc;
+      padding-bottom: 1rem;
+    }
+    a{
+      color: #666;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+}
 .options {
   position: fixed;
   height: 100%;
