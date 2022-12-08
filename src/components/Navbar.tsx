@@ -1,7 +1,6 @@
 import React from 'react';
-import '../css/global.css';
 
-function Navbar() {
+export default function Navbar() {
   return (
     <nav>
         <a href="/" className="logo" title="Torna alla pagina principale"><span>RMHub</span></a>
@@ -24,4 +23,3 @@ function Navbar() {
   );
 }
 
-export default Navbar;
