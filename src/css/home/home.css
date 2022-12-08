@@ -66,6 +66,21 @@
   transform: translateX(0%);
 }
 
+#Card1 {
+  background: center center no-repeat;
+  background-size: cover;
+}
+
+#Card2 {
+  background: center center no-repeat;
+  background-size: cover;
+}
+
+#Card3 {
+  background: center center no-repeat;
+  background-size: cover;
+}
+
 /*HOME*/
 .HomeIntro {
   height: 100vh;

@@ -83,6 +83,18 @@ $bg-body: #fff;//dfdfdf
     transform: translateX(0%);
 }
 
+#Card1{
+    background: center center no-repeat;
+    background-size: cover;
+}
+#Card2{
+    background: /*url("static/img/apps-img.jpg")*/ center center no-repeat;
+    background-size: cover;
+}
+#Card3{
+    background: /*url("static/img/code-img.jpg")*/ center center no-repeat;
+    background-size: cover;
+}
 /*HOME*/
 
 .HomeIntro{
