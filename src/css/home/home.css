@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url(keyframes.css);
+/* Variables*/
+/* Mixin */
+/* Styling*/
+.intro {
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  height: calc(70vh + 5rem);
+  width: calc(100% - 2rem);
+  margin: auto;
+  font-size: 70px;
+  color: #000;
+  font-weight: 400;
+}
+
+.intro > span {
+  box-shadow: 0 0 50px #666;
+  padding: 2rem;
+}
+
+.displayer {
+  min-width: auto;
+  min-height: 15rem;
+  margin-block: 1rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.displayer-item {
+  min-height: 20rem;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  align-items: flex-end;
+  width: 15rem;
+  padding-top: 1rem;
+  box-shadow: 0 0 50px #666;
+  z-index: 2;
+  transition: 250ms ease;
+}
+
+.displayer-item > div {
+  color: rgba(255, 255, 255, 0.85);
+  background: linear-gradient(transparent, #000);
+  min-height: 50%;
+  padding: 0 1rem 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 100%;
+}
+
+.paragraph {
+  transform: translateX(-120%);
+  transition: 250ms ease;
+  height: 100%;
+}
+
+.displayer-item:hover {
+  transform: scale(1.05);
+}
+
+.displayer-item:hover .paragraph {
+  transform: translateX(0%);
+}
+
+/*HOME*/
+.HomeIntro {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.HomeWellcome {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@-webkit-keyframes typing {
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+  }
+}
+@-webkit-keyframes blink {
+  100% {
+    background: transparent;
+  }
+}
+@keyframes blink {
+  100% {
+    background: transparent;
+  }
+}
+.typingAnim {
+  font-family: monospace;
+  position: relative;
+}
+
+.typingTxt {
+  margin: 5px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.typingTxt::before,
+.typingTxt::after {
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.typingTxt::before {
+  background: #fff;
+  -webkit-animation: typing 1.5s steps(24) forwards 1s;
+          animation: typing 1.5s steps(24) forwards 1s;
+}
+
+.typingTxt::after {
+  width: 0.125em;
+  background: #000;
+  -webkit-animation: typing 1.5s steps(24) forwards 1s, blink 300ms steps(24) infinite;
+          animation: typing 1.5s steps(24) forwards 1s, blink 300ms steps(24) infinite;
+}/*# sourceMappingURL=home.css.map */
