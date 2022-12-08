@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/global/global.css';
+import './css/global/classes.css'
 import Router from './Router'
 
 const root = ReactDOM.createRoot(
