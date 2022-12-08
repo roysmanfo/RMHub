@@ -51,19 +51,16 @@ footer {
   justify-items: stretch;
   margin-top: 3rem;
 }
-
 footer > div {
   flex-grow: 1;
   display: grid;
   place-items: center;
 }
-
 footer a {
   color: #999;
   margin: 7px 1rem 7px 0;
   text-decoration: none;
 }
-
 footer a:hover {
   color: #666;
 }
@@ -82,7 +79,6 @@ footer a:hover {
   flex-grow: 1;
   justify-content: center;
 }
-
 .navList > a {
   margin: 0 1rem;
   padding-bottom: 5px;
@@ -97,7 +93,6 @@ footer a:hover {
   background-position: left bottom;
   transition: 300ms;
 }
-
 .navList > a:hover {
   background-size: 100% 3px;
 }
@@ -127,13 +122,11 @@ footer a:hover {
   margin-block: auto;
   justify-content: space-evenly;
 }
-
 .socialList img {
   width: 1.5rem;
   height: 1.5rem;
   padding: 0 10px 0 0;
 }
-
 .socialList li {
   display: flex;
   align-items: center;

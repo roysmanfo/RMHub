@@ -69,21 +69,20 @@ footer{
     grid-template-areas: "title title" "list list";
     justify-items: stretch;
     margin-top: 3rem;
+    > div{
+        flex-grow: 1;
+        display: grid;
+        place-items: center
+    }
+    a{
+        color: #999;
+        margin: 7px 1rem 7px 0;
+        text-decoration: none;
+    }
+    a:hover{
+        color: #666;
+    }
 }
-footer>div{
-    flex-grow: 1;
-    display: grid;
-    place-items: center
-}
-footer a{
-    color: #999;
-    margin: 7px 1rem 7px 0;
-    text-decoration: none;
-}
-footer a:hover{
-    color: #666;
-}
-
 //Classes
 .logo{
     font-size: 2rem;
@@ -97,21 +96,21 @@ footer a:hover{
     display: flex;
     flex-grow: 1;
     justify-content: center;
-}
-.navList>a{
-    margin: 0 1rem;
-    padding-bottom: 5px;
-    width: max-content;
-    text-decoration: none;
-    color: $col-nav;
-    background-image: linear-gradient(90deg, $primary, $secondary);
-    background-size: 0% 3px;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    transition: 300ms;
-}
-.navList>a:hover{
-    background-size: 100% 3px;
+    > a{
+        margin: 0 1rem;
+        padding-bottom: 5px;
+        width: max-content;
+        text-decoration: none;
+        color: $col-nav;
+        background-image: linear-gradient(90deg, $primary, $secondary);
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        transition: 300ms;
+    }
+    > a:hover{
+        background-size: 100% 3px;
+    }
 }
 .mainLoginButton{
     background: $primary;
@@ -135,15 +134,16 @@ footer a:hover{
     flex-direction: column;
     margin-block: auto;
     justify-content: space-evenly;
-}
-.socialList img{
-    width: 1.5rem;
-    height: 1.5rem;
-    padding: 0 10px 0 0;
-}
-.socialList li{
-    display: flex;
-    align-items: center;
+    
+    img{
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0 10px 0 0;
+    }
+    li{
+        display: flex;
+        align-items: center;
+    }
 }
 .footer-list{
     list-style: none;
