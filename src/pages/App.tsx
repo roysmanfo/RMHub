@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import '../css/home/home.css'
 
 
-function Home() {
+function RootPage() {
     return (
         <>
             <Navbar />
@@ -45,10 +45,14 @@ function Home() {
     );
 }
 
-export default class App extends React.Component{
-    render(){
+export default function App(props: any) {
+    if (props.root){
         return(
-            <Home />
-        )
+            <RootPage />
+        );
+    }else{
+        return(
+            <h1>home</h1>
+        );
     }
 }
