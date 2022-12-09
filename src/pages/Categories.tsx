@@ -62,6 +62,61 @@ function CategoryList(){
     );
 }
 
+class CategoryBtn extends React.Component{
+    private name: string;
+    
+    constructor(name: string) {
+        super({});
+        this.name = name;
+    }
+
+    render(): React.ReactNode {
+        return(
+            <li><a href={"/" + this.name.toLowerCase()}>{this.name}</a></li>
+        )
+    }
+}
+function CategoryBtnList(){
+    let list: any = [];
+    
+    CATEGORIES.forEach(category => {
+        list.push(new CategoryBtn(category.name).render());
+    });
+    
+    return(
+        <>
+            {list}
+        </>
+    );
+}
+class CategoryLink extends React.Component{
+    private name: string;
+    
+    constructor(name: string) {
+        super({});
+        this.name = name;
+    }
+
+    render(): React.ReactNode {
+        return(
+            <li><a href={"/" + this.name.toLowerCase()}>{this.name}</a></li>
+        )
+    }
+}
+function CategoryLinkList(){
+    let list: any = [];
+    
+    CATEGORIES.forEach(category => {
+        list.push(new CategoryLink(category.name).render());
+    });
+    
+    return(
+        <>
+            {list}
+        </>
+    );
+}
+
 export default function Categories(){
     return(
         <>
@@ -71,10 +126,7 @@ export default function Categories(){
                 <div className="options font-1">
                     <p className="font-5">Categorie</p>
                     <ul className="leftUl">
-                        <li><a href="/minigiochi/" className="col-info">Minigiochi</a></li>
-                        <li><a href="/produttività/" className="col-info">Produttività</a></li>
-                        <li><a href="/utility/" className="col-info">Utility</a></li>
-                        <li><a href="/themes/" className="col-info">Themes</a></li>
+                        <CategoryLinkList />
                     </ul>
                 </div>
                 <p className="font-5" style={{color: "transparent"}}>Categorie</p>
@@ -86,27 +138,10 @@ export default function Categories(){
                     Ecco una lista di categorie che puoi trovare nel sito. Scegli quella che ti serve e inizia ad esplorare!
                     </p><ul className="summary">
                         <li id="minigame-btn"><a href="#minigiochi">Minigiochi</a></li>
-                        <li id="productivity-btn"><a href="#produttività">Produttività</a></li>
-                        <li id="utility-btn"><a href="#utility">Utility</a></li>
-                        <li id="themes-btn"><a href="#themes">Themes</a></li>
+                        <CategoryBtnList />
                     </ul>
                 <div className="article-wrapper">
                        <CategoryList /> 
-                    {/* <article id="produttività">
-                        <p className="font-3">Produttività</p>
-                        <p>Diversi programmi per potenzaiare la tua <a href="/source/produttività/">produttivitò</a> usando solo una risorsa. </p>
-                            
-                    </article>
-                    <article id="utility">
-                        <p className="font-3">Utility</p>
-                        <p> <a href="/utility/">Piccoli aiuti</a> per fare cose semplici, ma in modo più rapido ed efficace.</p>
-                        
-                    </article>
-                    <article id="themes">
-                        <p className="font-3">Themes</p>
-                        <p><a href="/themes/">Pagine web prefabbricate</a> per avere un punto di partenza nei tuoi progetti.</p>
-                        
-                    </article> */}
                 </div>
                 <Footer />
             </section>

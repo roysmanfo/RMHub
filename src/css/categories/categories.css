@@ -67,6 +67,7 @@ main {
 }
 .leftUl > li a {
   text-decoration: none;
+  color: inherit;
 }
 .leftUl > li a:hover {
   color: #666;
