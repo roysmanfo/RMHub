@@ -28,6 +28,7 @@ const CATEGORIES = [
 
 ]
 
+// Cards on the right hand side of the screen
 class Category extends React.Component{
     private name: string;
     private description: string;
@@ -66,6 +67,7 @@ function CategoryList(){
     );
 }
 
+// Buttons on the right side of the screen
 class CategoryBtn extends React.Component{
     private name: string;
     
@@ -93,6 +95,8 @@ function CategoryBtnList(){
         </>
     );
 }
+
+// Links on the left of the screen
 class CategoryLink extends React.Component{
     private name: string;
     
