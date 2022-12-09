@@ -4,6 +4,10 @@ import Footer from '../components/Footer';
 
 import '../css/categories/categories.css'
 
+
+// Everything routes around this object
+// By adding a category: a new link, button and card gets automatically created in the page
+// Format: {"name": "...", "description": "..."},
 const CATEGORIES = [
     {
         "name": "Minigiochi",
