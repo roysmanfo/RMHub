@@ -29,6 +29,7 @@ main {
 }
 .article-wrapper a {
   max-width: 40%;
+  flex-grow: 1;
   color: #999;
   padding: 2rem;
   background: #eee;
