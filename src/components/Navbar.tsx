@@ -5,20 +5,20 @@ export default function Navbar() {
     <nav>
         <a href="/" className="logo" title="Torna alla pagina principale"><span>RMHub</span></a>
         <ul className="navList">
-            <a href="h.html" rel="noopener noreferrer">
+            <a href="/home" rel="noopener noreferrer">
                 <li>Home</li>
             </a>
-            <a href="categories/">
+            <a href="/categories">
                 <li>Categorie</li>
             </a>
-            <a href="/unavaiable.html" rel="noopener noreferrer">
+            <a href="/unavaiable" rel="noopener noreferrer">
                 <li>Docs</li>
             </a>
-            <a href="/info/" rel="noopener noreferrer">
+            <a href="/info" rel="noopener noreferrer">
                 <li>Info</li>
             </a>
         </ul>
-        <a href="/login/"><button className="mainLoginButton">Login</button></a>
+        <a href="/login"><button className="mainLoginButton">Login</button></a>
     </nav>
   );
 }
