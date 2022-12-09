@@ -11,7 +11,7 @@ function RootPage() {
     return (
         <>
             <Navbar />
-            <main>
+            <main style={{ display: "block" }}>
 
                 <header className="intro txt-center">
                     <span>Roys Manfo Hub</span>
