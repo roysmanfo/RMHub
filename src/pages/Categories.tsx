@@ -126,30 +126,30 @@ export default function Categories(){
         <>
             <Navbar />
             <main>
-            <aside className="leftList">
-                <div className="options font-1">
-                    <p className="font-5">Categorie</p>
-                    <ul className="leftUl">
-                        <CategoryLinkList />
-                    </ul>
-                </div>
-                <p className="font-5" style={{color: "transparent"}}>Categorie</p>
-            </aside>
-            <section className="rightList">
-                <p className="font-5 txt-center">Introduzione</p>
-                <p className="txt-center">
-                    Trova quel che ti serve nel RMHub. <br /><br />
-                    Ecco una lista di categorie che puoi trovare nel sito. Scegli quella che ti serve e inizia ad esplorare!
-                    </p><ul className="summary">
-                        <li id="minigame-btn"><a href="#minigiochi">Minigiochi</a></li>
+                <aside className="leftList">
+                    <div className="options font-1">
+                        <p className="font-5">Categorie</p>
+                        <ul className="leftUl">
+                            <CategoryLinkList />
+                        </ul>
+                    </div>
+                    <p className="font-5" style={{color: "transparent"}}>Categorie</p>
+                </aside>
+                <section className="rightList">
+                    <p className="font-5 txt-center">Introduzione</p>
+                    <p className="txt-center">
+                        Trova quel che ti serve nel RMHub. <br /><br />
+                        Ecco una lista di categorie che puoi trovare nel sito. Scegli quella che ti serve e inizia ad esplorare!
+                    </p>
+                    <ul className="summary">
                         <CategoryBtnList />
                     </ul>
-                <div className="article-wrapper">
-                       <CategoryList /> 
-                </div>
-                <Footer />
-            </section>
-        </main>
+                    <div className="article-wrapper">
+                        <CategoryList /> 
+                    </div>
+                    <Footer />
+                </section>
+            </main>
             
         </>
     )
