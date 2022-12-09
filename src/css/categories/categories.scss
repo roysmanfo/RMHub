@@ -38,12 +38,15 @@ main {
   margin-top: 1rem;
 }
 .article-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-inline: 2rem;
 
   article{
+    max-width: 40%;
     color: #999;
-    margin: 1rem;
     padding: 2rem;
     background: #eee;
     border-radius: 10px;
@@ -82,7 +85,7 @@ main {
       a{
         text-decoration: none;
       }
-      
+
       a:hover {
             color: #666;
             cursor: pointer;
@@ -108,32 +111,19 @@ main {
       margin-block: 0.2rem;
       padding: 0.7rem;
       border-radius: 4px;
-      color: #999;
+      background: #999;
       transition: 250ms;
-      
+      padding: 1.2rem 0;
       a{
+        padding: 0 2.5rem;
         text-decoration: none;
         color: #fff !important;
+        cursor: pointer;
       }
     }
 }
 
 .summary li:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
-
-#minigame-btn {
-  background-color: rgb(39, 123, 201);
-}
-
-#productivity-btn {
-  background-color: rgb(219, 52, 52);
-}
-
-#utility-btn {
-  background-color: #999;
-}
-
-#themes-btn {
-  background-color: rgb(44, 199, 78);
-}/*# sourceMappingURL=categories.css.map */
+/*# sourceMappingURL=categories.css.map */
