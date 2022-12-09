@@ -24,6 +24,44 @@ const CATEGORIES = [
 
 ]
 
+class Category extends React.Component{
+    private name: string;
+    private description: string;
+    
+    constructor(name: string, description: string) {
+        super({});
+        this.name = name;
+        this.description = description;
+    }
+
+    render(): React.ReactNode {
+        return(
+        <a href={"/" + this.name.toLowerCase()}>
+            <article>
+                
+                    <p className="font-3">{this.name}</p>
+                    <p>{this.description}</p>
+                
+            </article>
+            </a>
+        )
+    }
+}
+
+function CategoryList(){
+    let list: any = [];
+    
+    CATEGORIES.forEach(category => {
+        list.push(new Category(category.name, category.description).render());
+    });
+    
+    return(
+        <>
+            {list}
+        </>
+    );
+}
+
 export default function Categories(){
     return(
         <>
@@ -53,31 +91,23 @@ export default function Categories(){
                         <li id="themes-btn"><a href="#themes">Themes</a></li>
                     </ul>
                 <div className="article-wrapper">
-
-                    <article id="minigiochi">
-                        <p className="font-3">Minigiochi</p>
-                    <p>
-                        I <span className="weight-6"> <a href="/minigiochi/">minigiochi</a></span>  sono una categoria di giochi brevi ma che intrattengono molto
-                    </p>
-                    
-                    
-                </article>
-                <article id="produttività">
-                    <p className="font-3">Produttività</p>
-                    <p>Diversi programmi per potenzaiare la tua <a href="/source/produttività/">produttivitò</a> usando solo una risorsa. </p>
+                       <CategoryList /> 
+                    {/* <article id="produttività">
+                        <p className="font-3">Produttività</p>
+                        <p>Diversi programmi per potenzaiare la tua <a href="/source/produttività/">produttivitò</a> usando solo una risorsa. </p>
+                            
+                    </article>
+                    <article id="utility">
+                        <p className="font-3">Utility</p>
+                        <p> <a href="/utility/">Piccoli aiuti</a> per fare cose semplici, ma in modo più rapido ed efficace.</p>
                         
-                </article>
-                <article id="utility">
-                    <p className="font-3">Utility</p>
-                    <p> <a href="/utility/">Piccoli aiuti</a> per fare cose semplici, ma in modo più rapido ed efficace.</p>
-                    
-                </article>
-                <article id="themes">
-                    <p className="font-3">Themes</p>
-                    <p><a href="/themes/">Pagine web prefabbricate</a> per avere un punto di partenza nei tuoi progetti.</p>
-                    
-                </article>
-            </div>
+                    </article>
+                    <article id="themes">
+                        <p className="font-3">Themes</p>
+                        <p><a href="/themes/">Pagine web prefabbricate</a> per avere un punto di partenza nei tuoi progetti.</p>
+                        
+                    </article> */}
+                </div>
                 <Footer />
             </section>
         </main>

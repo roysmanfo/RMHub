@@ -27,21 +27,21 @@ main {
   gap: 2rem;
   margin-inline: 2rem;
 }
-.article-wrapper article {
+.article-wrapper a {
   max-width: 40%;
   color: #999;
   padding: 2rem;
   background: #eee;
   border-radius: 10px;
+  text-decoration: none;
+  transition: 250ms ease;
 }
-.article-wrapper article .font-3 {
+.article-wrapper a .font-3 {
   border-bottom: solid 3px #ccc;
   padding-bottom: 1rem;
 }
-.article-wrapper article a {
-  color: #666;
-  font-weight: 600;
-  text-decoration: none;
+.article-wrapper a:hover {
+  background: #ddd;
 }
 
 .options {
@@ -94,7 +94,7 @@ main {
   padding: 1.2rem 0;
 }
 .summary li a {
-  padding: 0 2.5rem;
+  padding: 1.2rem 2.5rem;
   text-decoration: none;
   color: #fff !important;
   cursor: pointer;
