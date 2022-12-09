@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import '../css/home/home.css'
 
 import dices from '../img/generic/dices.jpg'
@@ -43,6 +44,7 @@ function RootPage() {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
 
     );
