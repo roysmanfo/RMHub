@@ -6,75 +6,18 @@ $info: #999;
 $yellow: rgb(235, 235, 18);
 $orange: orange;
 
-@keyframes blockOne {
-    0% {background: $grass;transform: translateY(-15vw);}
-    50% {background: $secondary;transform: translateY(5vw);}
-    100% {background: $grass;transform: translateY(-15vw);}
-}
-@keyframes blockTwo {
-    0% {background: $secondary;transform: rotate(80deg);}
-    50% {background: $yellow;transform: rotate(-30deg);border-radius: 30px 0;}
-    100% {background: $secondary;transform: rotate(80deg);}
-}
-@keyframes blockThree {
-    0% {border-radius: 50%;}
-    25% {border-radius: 50% 0}
-    50% {border-radius: 0;}
-    75% {border-radius: 0 50%;}
-    100% {border-radius: 50%;}
-}
-@keyframes blockFour {
-    0% {}
-    50% {width: 20rem;}
-    100% {}
-}
-@keyframes blockFive {
-    0% {}
-    50% {width: 20rem;}
-    100% {}
+@keyframes light {
+    to {opacity: 1;}
 }
 
-.block{
-    height: 100px;
-    width: 100px;
+@keyframes letter1 {
+    to {opacity: 1;}
 }
-.block_one{
-    animation: blockOne 5s infinite;
-    position: absolute;
-    top: 50%;
-    left: 10%;
+
+@keyframes letter2 {
+    to {opacity: 1;}
 }
-.block_two{
-    height: 150px;
-    width: 150px;
-    animation: blockTwo 4s infinite;
-    position: absolute;
-    top: 20%;
-    right: 10%;
-}
-.block_three{
-    animation: blockThree 3s infinite;
-    position: absolute;
-    bottom: 10%;
-    right: 30%;
-    border: solid 7px $orange;
-    border-radius: 50%;
-}
-.block_four{
-    height: 30px;
-    width: 30px;
-    animation: blockFour 6s infinite;
-    position: absolute;
-    bottom: 10%;
-    left: 20%;
-    border: solid 7px #000;
-}
-.block_five{
-    height: 30px;
-    width: 30px;
-    animation: blockFive 4.5s infinite;
-    position: absolute;
-    top: 20%;
-    right: 40%;
-    border: solid 7px $primary;
+
+@keyframes letter3 {
+    to {opacity: 1;}
 }
