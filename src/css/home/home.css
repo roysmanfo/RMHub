@@ -1,84 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 @import url(keyframes.css);
 /* Variables*/
-/* Mixin */
 /* Styling*/
 .intro {
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  height: calc(70vh + 5rem);
-  width: calc(100% - 2rem);
+  background: #000;
+  height: calc(100vh - 5rem);
+  width: 100%;
   margin: auto;
   font-size: 70px;
-  color: #000;
+  color: #fff;
   font-weight: 400;
+  align-items: center;
+  justify-content: space-evenly;
+  isolation: isolate;
+  position: relative;
+}
+
+.anim {
+  z-index: -1;
+  background-image: radial-gradient(#0e0e0e, #000);
+  opacity: 0;
+  -webkit-animation: light 1s ease 4s forwards;
+          animation: light 1s ease 4s forwards;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .intro > span {
-  box-shadow: 0 0 50px #666;
   padding: 2rem;
+  font-size: 15rem;
+  opacity: 0;
 }
 
-.displayer {
-  min-width: auto;
-  min-height: 15rem;
-  margin-block: 1rem;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-evenly;
+.l1 {
+  -webkit-animation: letter1 1s ease 1s forwards;
+          animation: letter1 1s ease 1s forwards;
 }
 
-.displayer-item {
-  min-height: 20rem;
-  border-radius: 10px;
-  background: #fff;
-  display: flex;
-  align-items: flex-end;
-  width: 15rem;
-  padding-top: 1rem;
-  box-shadow: 0 0 50px #666;
-  z-index: 2;
-  transition: 250ms ease;
+.l2 {
+  -webkit-animation: letter2 1s ease 2s forwards;
+          animation: letter2 1s ease 2s forwards;
 }
 
-.displayer-item > div {
-  color: rgba(255, 255, 255, 0.85);
-  background: linear-gradient(transparent, #000);
-  min-height: 50%;
-  padding: 0 1rem 1rem;
-  border-radius: 1rem;
-  overflow: hidden;
-  height: 100%;
-}
-
-.paragraph {
-  transform: translateX(-120%);
-  transition: 250ms ease;
-  height: 100%;
-}
-
-.displayer-item:hover {
-  transform: scale(1.05);
-}
-
-.displayer-item:hover .paragraph {
-  transform: translateX(0%);
-}
-
-#Card1 {
-  background: center center no-repeat;
-  background-size: cover;
-}
-
-#Card2 {
-  background: center center no-repeat;
-  background-size: cover;
-}
-
-#Card3 {
-  background: center center no-repeat;
-  background-size: cover;
+.l3 {
+  -webkit-animation: letter2 1s ease 3s forwards;
+          animation: letter2 1s ease 3s forwards;
 }
 
 /*HOME*/
