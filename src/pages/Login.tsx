@@ -46,8 +46,8 @@ class Auth extends React.Component{
     }
 
     authListener(){
-        app.auth().onAuthStateChanged((user) => {
+        // app.auth().onAuthStateChanged((user) => {
             
-        });
+        // });
     }
 }
