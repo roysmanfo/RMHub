@@ -6,7 +6,7 @@ import '../css/home/home.css'
 function RootPage() {
     return (
         <>
-            <Navbar />
+            <Navbar index />
             <main style={{ display: "flex"}} className="intro txt-center">
             <div className="anim"></div>
             <span className='l1'>R</span>
