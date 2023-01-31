@@ -103,14 +103,21 @@ footer{
         width: max-content;
         text-decoration: none;
         color: $col-nav;
-        background-image: linear-gradient(90deg, $primary, $secondary);
-        background-size: 0% 3px;
-        background-repeat: no-repeat;
-        background-position: left bottom;
-        transition: 300ms;
-    }
-    > a:hover{
-        background-size: 100% 3px;
+        position: relative;
+        
+        ::before{
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 0%;
+            background: #666;
+            bottom: 0;
+            left: 0;
+            transition: 300ms ease;
+        }
+        :hover::before{
+            width: 100%;
+        }
     }
 }
 .mainLoginButton{

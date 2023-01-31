@@ -88,14 +88,20 @@ footer a:hover {
   width: max-content;
   text-decoration: none;
   color: #fff;
-  background-image: linear-gradient(90deg, rgb(39, 123, 201), rgb(219, 52, 52));
-  background-size: 0% 3px;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  transition: 300ms;
+  position: relative;
 }
-.navList > a:hover {
-  background-size: 100% 3px;
+.navList > a ::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  background: #666;
+  bottom: 0;
+  left: 0;
+  transition: 300ms ease;
+}
+.navList > a :hover::before {
+  width: 100%;
 }
 
 .mainLoginButton {
