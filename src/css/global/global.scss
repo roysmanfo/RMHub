@@ -121,7 +121,7 @@ footer{
     }
 }
 .mainLoginButton{
-    background: $primary;
+    background: #262626;
     border: none;
     outline: none;
     padding: 1rem 2rem;
@@ -134,7 +134,7 @@ footer{
     font-family: Comfortaa;
 }
 .mainLoginButton:hover{
-    filter: brightness(90%);
+    background: #181818;
 }
 .socialList{
     list-style: none;
