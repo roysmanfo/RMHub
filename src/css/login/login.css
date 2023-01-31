@@ -35,7 +35,7 @@
 }
 .button-wrapper button {
   border: none;
-  background: #277bc9;
+  background: #444;
   flex-grow: 1;
   font-size: 1rem;
   font-weight: 600;
@@ -47,5 +47,5 @@
   transition: 250ms;
 }
 .button-wrapper button:hover {
-  background: #1b5388;
+  background: #222;
 }/*# sourceMappingURL=login.css.map */
