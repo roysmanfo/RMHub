@@ -1,6 +1,16 @@
 import React from 'react';
 import app from '../conf/firebase';
-import "../css/login/login.css";
+import LinkList from '../components/LinkList';
+
+
+const LINKS: {rel: string; type: string; href: string;}[] = [
+    {
+        "rel": "stylesheet",
+        "type": "text/css",
+        "href": "../css/login/login.css"
+    },
+]
+
 
 export default class Login extends React.Component{
 
@@ -15,17 +25,20 @@ export default class Login extends React.Component{
 
     render(): React.ReactNode {
         return(
-            <main className='login-main'>
-                <form action="" method="post">
-                    <h1 style={{marginBottom: "4rem", color: "#999"}}>Login</h1>
-                    <input name='email' type="email" id="email" placeholder='Email'/>
-                    <input name='password' type="password" id="password" placeholder='Password'/>
-                    <div className="button-wrapper">
-                        <button onClick={this.login}>Login</button>
-                        <button onClick={this.signUp}>Sign Up</button>
-                    </div>
-                </form>
-            </main>
+            <>
+                <LinkList props = {LINKS} />
+                <main className='login-main'>
+                    <form action="" method="post">
+                        <h1 style={{marginBottom: "4rem", color: "#999"}}>Login</h1>
+                        <input name='email' type="email" id="email" placeholder='Email'/>
+                        <input name='password' type="password" id="password" placeholder='Password'/>
+                        <div className="button-wrapper">
+                            <button onClick={this.login}>Login</button>
+                            <button onClick={this.signUp}>Sign Up</button>
+                        </div>
+                    </form>
+                </main>
+            </>
         )
     }
 }

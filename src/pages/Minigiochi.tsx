@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer";
 import LinkList from "../components/LinkList";
-import '../css/categories/categories.css'
 
 
 
@@ -11,6 +10,11 @@ const LINKS: {rel: string; type: string; href: string;}[] = [
         "rel": "stylesheet",
         "type": "text/css",
         "href": "../css/minigiochi/minigiochi.css"
+    },
+    {
+        "rel": "stylesheet",
+        "type": "text/css",
+        "href": "../css/categories/categories.css"
     },
 ]
 
