@@ -1,15 +1,7 @@
 import React from 'react';
 import app from '../conf/firebase';
-import LinkList from '../components/LinkList';
+import "../css/login/login.css"
 
-
-const LINKS: {rel: string; type: string; href: string;}[] = [
-    {
-        "rel": "stylesheet",
-        "type": "text/css",
-        "href": "../css/login/login.css"
-    },
-]
 
 
 export default class Login extends React.Component{
@@ -26,7 +18,6 @@ export default class Login extends React.Component{
     render(): React.ReactNode {
         return(
             <>
-                <LinkList props = {LINKS} />
                 <main className='login-main'>
                     <form action="" method="post">
                         <h1 style={{marginBottom: "4rem", color: "#999"}}>Login</h1>

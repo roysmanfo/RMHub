@@ -1,23 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import LinkList from './components/LinkList';
 import './css/global/global.css';
 import './css/global/classes.css'
 import Router from './Router'
-
-const LINKS: {rel: string; type: string; href: string;}[] = [
-  {
-      "rel": "stylesheet",
-      "type": "text/css",
-      "href": "./css/global/global.css"
-  },
-  {
-      "rel": "stylesheet",
-      "type": "text/css",
-      "href": "./css/global/classes.css"
-  },
-]
-
 
 
 const root = ReactDOM.createRoot(
@@ -25,7 +10,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <LinkList props = {LINKS} />
     <Router />
   </React.StrictMode>
 );

@@ -1,22 +1,12 @@
 import React from 'react';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import LinkList from '../components/LinkList';
-
-const LINKS: {rel: string; type: string; href: string;}[] = [
-    {
-        "rel": "stylesheet",
-        "type": "text/css",
-        "href": "../css/home/home.css"
-    },
-]
-
+import "../css/home/home.css"
 
 
 function RootPage() {
     return (
         <>
-            <LinkList props = {LINKS} />
             <Navbar index />
             <main style={{ display: "flex" }} className="intro txt-center">
                 <div className="anim"></div>
@@ -31,7 +21,6 @@ function RootPage() {
 function Home() {
     return (
         <>
-            <LinkList props = {LINKS} />
             <Navbar />
             <header className="HomeIntro ">
                 <div style={{ width: "50%", display: "grid", placeItems: "center" }}>

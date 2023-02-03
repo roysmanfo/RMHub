@@ -1,16 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import LinkList from '../components/LinkList';
 
-
-const LINKS: {rel: string; type: string; href: string;}[] = [
-    {
-        "rel": "stylesheet",
-        "type": "text/css",
-        "href": "../css/categories/categories.css"
-    },
-]
+import "../css/categories/categories.css"
 
 
 // Everything routes around this object
@@ -136,7 +128,6 @@ function CategoryLinkList(){
 export default function Categories(){
     return(
         <>
-            <LinkList props = {LINKS} />
             <Navbar />
             <main>
                 <aside className="leftList">
