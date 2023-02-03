@@ -135,6 +135,38 @@ footer{
 .mainLoginButton:hover{
     background: #181818;
 }
+.card{
+    height: 250px;
+    width: 300px;
+    background: #000;
+    margin: 0 0.5rem 1rem 0.5rem;
+    text-decoration: none;
+    overflow: hidden;
+    isolation: isolate;
+    
+
+    .caption{
+        height: 30%;
+        width: 100%;
+        background: #e5e5e5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+    }
+    .inner-card{
+        height: 70%;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        transition: 1s ease;
+    }
+}
+.card:hover{
+    .inner-card{
+        scale: 1.5;
+    }
+}
 .socialList{
     list-style: none;
     display: flex;
