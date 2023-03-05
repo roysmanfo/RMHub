@@ -7,7 +7,6 @@ main {
 
 .leftList {
   max-width: min(30%, 20rem);
-  min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
   padding: 1rem;
@@ -82,7 +81,6 @@ main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   width: 100%;
@@ -106,4 +104,4 @@ main {
   transform: scale(1.1);
 }
 
-/*# sourceMappingURL=categories.css.map *//*# sourceMappingURL=categories.css.map */
+/*# sourceMappingURL=categories.css.map */

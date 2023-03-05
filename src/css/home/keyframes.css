@@ -1,14 +1,4 @@
-@-webkit-keyframes light {
-  to {
-    opacity: 1;
-  }
-}
 @keyframes light {
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes letter1 {
   to {
     opacity: 1;
   }
@@ -18,17 +8,7 @@
     opacity: 1;
   }
 }
-@-webkit-keyframes letter2 {
-  to {
-    opacity: 1;
-  }
-}
 @keyframes letter2 {
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes letter3 {
   to {
     opacity: 1;
   }

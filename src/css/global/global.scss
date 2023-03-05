@@ -30,7 +30,7 @@ $bg-body: #fff;//dfdfdf
 html,body{
     min-height: 100vh;
     margin: 0;
-    font-family: Comfortaa;
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
 body{
@@ -78,6 +78,7 @@ footer{
         color: #999;
         margin: 7px 1rem 7px 0;
         text-decoration: none;
+        font-weight: 700;
     }
     a:hover{
         color: #666;

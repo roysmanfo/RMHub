@@ -20,8 +20,7 @@
   z-index: -1;
   background-image: radial-gradient(#0e0e0e, #000);
   opacity: 0;
-  -webkit-animation: light 1s ease 4s forwards;
-          animation: light 1s ease 4s forwards;
+  animation: light 1s ease 4s forwards;
   position: absolute;
   top: 0;
   right: 0;
@@ -36,18 +35,15 @@
 }
 
 .l1 {
-  -webkit-animation: letter1 1s ease 1s forwards;
-          animation: letter1 1s ease 1s forwards;
+  animation: letter1 1s ease 1s forwards;
 }
 
 .l2 {
-  -webkit-animation: letter2 1s ease 2s forwards;
-          animation: letter2 1s ease 2s forwards;
+  animation: letter2 1s ease 2s forwards;
 }
 
 .l3 {
-  -webkit-animation: letter2 1s ease 3s forwards;
-          animation: letter2 1s ease 3s forwards;
+  animation: letter2 1s ease 3s forwards;
 }
 
 /*HOME*/
@@ -65,20 +61,9 @@
   justify-content: center;
 }
 
-@-webkit-keyframes typing {
-  100% {
-    left: 100%;
-  }
-}
-
 @keyframes typing {
   100% {
     left: 100%;
-  }
-}
-@-webkit-keyframes blink {
-  100% {
-    background: transparent;
   }
 }
 @keyframes blink {
@@ -93,7 +78,6 @@
 
 .typingTxt {
   margin: 5px;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -110,13 +94,11 @@
 
 .typingTxt::before {
   background: #fff;
-  -webkit-animation: typing 1.5s steps(24) forwards 1s;
-          animation: typing 1.5s steps(24) forwards 1s;
+  animation: typing 1.5s steps(24) forwards 1s;
 }
 
 .typingTxt::after {
   width: 0.125em;
   background: #000;
-  -webkit-animation: typing 1.5s steps(24) forwards 1s, blink 300ms steps(24) infinite;
-          animation: typing 1.5s steps(24) forwards 1s, blink 300ms steps(24) infinite;
+  animation: typing 1.5s steps(24) forwards 1s, blink 300ms steps(24) infinite;
 }/*# sourceMappingURL=home.css.map */
