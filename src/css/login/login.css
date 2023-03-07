@@ -1,21 +1,31 @@
-.login-main {
+* .login-main {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   padding: 0;
   background: #000;
 }
-.login-main form {
+* .login-main > * {
+  box-sizing: border-box;
+}
+* .login-main form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background: #fff;
   padding: 3rem;
-  border-radius: 1rem;
-  width: 30%;
+  width: 40%;
+  height: 100%;
 }
-.login-main form input {
+* .login-main form h1 {
+  margin-bottom: 4rem;
+  color: #000;
+  font-weight: 900;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+* .login-main form input {
   padding: 5px 1rem;
   font-family: inherit;
   font-size: 1.1rem;
@@ -24,9 +34,19 @@
   margin-bottom: 1rem;
   height: 1.7rem;
 }
-.login-main form input:focus {
+* .login-main form input:focus {
   background-color: #ccc;
   outline: none;
+}
+* .login-main aside {
+  width: 60%;
+  padding: 3rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+* .login-main aside img {
+  width: 100%;
 }
 
 .button-wrapper {
@@ -35,7 +55,7 @@
 }
 .button-wrapper button {
   border: none;
-  background: #444;
+  background: #000;
   flex-grow: 1;
   font-size: 1rem;
   font-weight: 600;
@@ -43,8 +63,8 @@
   color: #fff;
   padding: 15px 2rem;
   cursor: pointer;
-  border-radius: 5px;
   transition: 250ms;
+  text-transform: uppercase;
 }
 .button-wrapper button:hover {
   background: #222;

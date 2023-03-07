@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { useNavigate } from 'react-router-dom';
-import "../css/login/login.css";
 import ENV from '../env';
+import "../css/login/login.css";
+import logo from "../img/logos/png/logo-white.png"
+
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -60,8 +62,11 @@ export default function Login() {
     return (
         <>
             <main className='login-main'>
+                <aside style={{ height: "100%" }}>
+                    <img src={ logo } alt="Logo" draggable="false" />
+                </aside>
                 <form method="post">
-                    <h1 style={{ marginBottom: "4rem", color: "#999" }}>Login</h1>
+                    <h1 style={{ marginBottom: "4rem", color: "#999" }}>Sign</h1>
                     <input name='email' type="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                     <input name='password' type="password" id="password" placeholder='Password' value={pass} onChange={(e) => setPass(e.target.value)} />
                     <div className="button-wrapper">
