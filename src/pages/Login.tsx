@@ -66,7 +66,7 @@ export default function Login() {
                     <img src={ logo } alt="Logo" draggable="false" />
                 </aside>
                 <form method="post">
-                    <h1 style={{ marginBottom: "4rem", color: "#999" }}>Sign</h1>
+                    <h1>Sign</h1>
                     <input name='email' type="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                     <input name='password' type="password" id="password" placeholder='Password' value={pass} onChange={(e) => setPass(e.target.value)} />
                     <div className="button-wrapper">
