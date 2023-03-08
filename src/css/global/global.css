@@ -114,7 +114,7 @@ footer a:hover {
   font-weight: bold;
   cursor: pointer;
   transition: 250ms;
-  font-family: Comfortaa;
+  font-family: inherit;
 }
 
 .mainLoginButton:hover {
