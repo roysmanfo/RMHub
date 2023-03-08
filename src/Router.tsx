@@ -3,6 +3,7 @@ import App from './pages/App';
 import Categories from "./pages/Categories";
 import Login from "./pages/Login";
 import Minigiochi from "./pages/Minigiochi";
+import Profile from "./pages/Profile";
 
 export default function Router() {
 	return (
@@ -13,6 +14,7 @@ export default function Router() {
 				<Route path="/home" element={<App />} />
 				<Route path="/categories" element={<Categories />} />
 				<Route path="/minigiochi" element={<Minigiochi />} />
+				<Route path="/profile" element={<Profile />} />
 			</Routes>
 		</BrowserRouter>
 	);
