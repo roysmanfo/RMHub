@@ -54,5 +54,6 @@ export default function Profile() {
         } else {
             console.log("User signed out.");
         }
+        window.location.reload();
     }
 }

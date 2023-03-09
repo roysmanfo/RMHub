@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { useNavigate } from "react-router-dom";
 import ENV from '../env';
 import "../css/login/login.css";
 import logo from "../img/logos/png/logo-white.png"
-
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -13,36 +11,27 @@ export default function Login() {
     // Create a single supabase client for interacting with your database
     const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
 
-    const navigate = useNavigate();
-
-    const redirect = (path: string) => {
-        navigate(path);
-    }
-
     async function signUp() {
-        const { data, error } = await supabase.auth.signUp({
+        const { error } = await supabase.auth.signUp({
             email: email,
             password: pass,
             options: {
                 emailRedirectTo: '/profile'
             }
         })
-
         if (error) {
             console.log(error);
             return
         }
-        const { data: userData, error: userError } = await supabase.from('users').insert({ email: email }).single();
+        const { error: userError } = await supabase.from('users').insert({ email: email }).single();
         if (userError) {
             console.log(userError);
-            return
         }
-
-        redirect("/profile");
+        window.location.href = "/profile";
     }
 
     async function login() {
-        let { data, error } = await supabase.auth.signInWithPassword({
+        let { error } = await supabase.auth.signInWithPassword({
             email: email,
             password: pass,
         })
@@ -51,13 +40,12 @@ export default function Login() {
             console.log(error);
             return
         }
-        const { data: userData, error: userError } = await supabase.from('users').insert({ email: email }).single();
+        const { error: userError } = await supabase.from('users').insert({ email: email }).single();
         if (userError) {
             console.log(userError);
-            return
         }
 
-        redirect("/profile");
+        window.location.href = "/profile";
     }
 
     return (
