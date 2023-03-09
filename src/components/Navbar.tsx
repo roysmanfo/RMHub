@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import logo from "../img/logos/png/white-no-background.png";
 import { createClient } from '@supabase/supabase-js';
 import ENV from '../env';
