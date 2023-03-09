@@ -4,6 +4,7 @@ import { createClient } from '@supabase/supabase-js';
 import ENV from '../env';
 
 const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
+let loggedUser: any = null;
 
 export default function Navbar(props: any) {
     return (
@@ -28,34 +29,46 @@ export default function Navbar(props: any) {
     );
 }
 async function getUser() {
-        const { data: session, error } = await supabase.auth.getSession();
-        if (error) {
-            console.error(error);
-            return null;
-        }
-        console.log(session);
-        return null;
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+        loggedUser = user;
+        let a: HTMLElement | null = document.getElementById("nav-button");
+        let b: HTMLElement | null = document.getElementById("nav-auth-link");
+
+        if (a != null)
+            a.innerText = "Profile";
+        if (b != null)
+            b.setAttribute("href", "/profile");
     }
+    else {
+        loggedUser = null;
+        let a: HTMLElement | null = document.getElementById("nav-button");
+        let b: HTMLElement | null = document.getElementById("nav-auth-link");
+
+        if (a != null)
+            a.innerText = "Login";
+        if (b != null)
+            b.setAttribute("href", "/login");
+    }
+
+}
 function LoginButton() {
-    const [user, setUser] = useState<any>(null);
-
-    useEffect(() => {
-        setUser(getUser());
-
-    }, []);
 
     function handleLoginClick() {
         window.location.href = "/login";
     }
-    if (user !== null) {
+    getUser()
+    if (loggedUser !== null) {
         return (
-            <a href="/profile">
-                <button className="mainLoginButton">Profile</button>
+            <a href="/profile" id='nav-auth-link'>
+                <button className="mainLoginButton" id='nav-button'>Profile</button>
             </a>
         )
     } else {
         return (
-            <button className="mainLoginButton" onClick={handleLoginClick}>Login</button>
+            <a href="/profile" id="nav-auth-link">
+                <button className="mainLoginButton" onClick={handleLoginClick} id='nav-button'>Login</button>
+            </a>
         )
     }
 }

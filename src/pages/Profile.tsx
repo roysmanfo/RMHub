@@ -27,7 +27,7 @@ export default function Profile() {
     return (
         <>
             <Navbar />
-            <main>
+            <main className='column x-center'>
                 <h1>Profile</h1>
                 <button className="mainLoginButton" onClick={logout}>Logout</button>
                 {/* <p>Email: { user }</p> */}
