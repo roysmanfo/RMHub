@@ -67,87 +67,17 @@ function CategoryList(){
     );
 }
 
-// Buttons on the right side of the screen
-class CategoryBtn extends React.Component{
-    private name: string;
-    
-    constructor(name: string) {
-        super({});
-        this.name = name;
-    }
-
-    render(): React.ReactNode {
-        return(
-            <li><a href={"/" + this.name.toLowerCase()}>{this.name}</a></li>
-        )
-    }
-}
-function CategoryBtnList(){
-    let list: any = [];
-    
-    CATEGORIES.forEach(category => {
-        list.push(new CategoryBtn(category.name).render());
-    });
-    
-    return(
-        <>
-            {list}
-        </>
-    );
-}
-
-// Links on the left of the screen
-class CategoryLink extends React.Component{
-    private name: string;
-    
-    constructor(name: string) {
-        super({});
-        this.name = name;
-    }
-
-    render(): React.ReactNode {
-        return(
-            <li><a href={"/" + this.name.toLowerCase()}>{this.name}</a></li>
-        )
-    }
-}
-function CategoryLinkList(){
-    let list: any = [];
-    
-    CATEGORIES.forEach(category => {
-        list.push(new CategoryLink(category.name).render());
-    });
-    
-    return(
-        <>
-            {list}
-        </>
-    );
-}
-
 export default function Categories(){
     return(
         <>
             <Navbar />
             <main>
-                <aside className="leftList">
-                    <div className="options font-1">
-                        <p className="font-5">Categorie</p>
-                        <ul className="leftUl">
-                            <CategoryLinkList />
-                        </ul>
-                    </div>
-                    <p className="font-5" style={{color: "transparent"}}>Categorie</p>
-                </aside>
                 <section className="rightList">
-                    <p className="font-5 txt-center">Introduzione</p>
+                    <p className="font-5 txt-center">Categorie</p>
                     <p className="txt-center">
                         Trova quel che ti serve nel RMHub. <br /><br />
                         Ecco una lista di categorie che puoi trovare nel sito. Scegli quella che ti serve e inizia ad esplorare!
                     </p>
-                    <ul className="summary">
-                        <CategoryBtnList />
-                    </ul>
                     <div className="article-wrapper">
                         <CategoryList /> 
                     </div>

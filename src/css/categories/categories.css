@@ -23,8 +23,8 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  margin-inline: 2rem;
+  gap: 3rem;
+  margin: 6rem 2rem;
 }
 .article-wrapper a {
   max-width: 40%;
