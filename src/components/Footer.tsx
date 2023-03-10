@@ -32,7 +32,7 @@ export default function Footer(){
                         <a href="https://github.com/RoysManfo" target="_blank" rel="noopener noreferrer" title="GitHub">
                             <li><img src={github} alt="GitHub" />GitHub</li>
                         </a>
-                        <a href="https://twitter.com/roysmanfo" target="_blank" rel="noopener noreferrer" title="Twitter">
+                        <a href="https://twitter.com/roysmanfo_" target="_blank" rel="noopener noreferrer" title="Twitter">
                             <li><img src={twitter} alt="Twitter" />Twitter</li>
                         </a>
                     </ul>
