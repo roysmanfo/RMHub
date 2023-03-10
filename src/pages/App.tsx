@@ -31,7 +31,7 @@ function Home() {
                 </div>
                 <div style={{ width: "50%", height: "100%", display: "flex", justifyContent: "center" }}>
                     <div className="HomeWellcome">
-                        <h1 className="col-primary">Benvenuto nell'Hub</h1>
+                        <h1 className="col-info">Benvenuto nell'Hub</h1>
                         <p className="weight-5 font-2"><br />
                             Questo è il posto dove caricherò i miei progetti, app e altri contenuti.
                             <br />

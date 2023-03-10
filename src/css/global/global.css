@@ -27,7 +27,26 @@ nav {
 }
 
 a {
-  color: rgb(44, 199, 78);
+  color: #999;
+  position: relative;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+a:not(nav a, footer a)::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: calc(100% + 2px);
+  bottom: -3px;
+  left: 0;
+  z-index: -1;
+  background: #ddd;
+  transition: 0.4s ease;
+}
+
+a:not(nav a, footer a):hover::before {
+  height: calc(100% + 5px);
 }
 
 main {
