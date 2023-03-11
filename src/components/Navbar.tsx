@@ -54,11 +54,8 @@ async function getUser() {
     const { data: { user } } = await supabase.auth.getUser();
     if (user) {
         loggedUser = user;
-        let a: HTMLElement | null = document.getElementById("nav-button");
         let b: HTMLElement | null = document.getElementById("nav-auth-link");
 
-        if (a != null)
-            a.innerText = "Profile";
         if (b != null)
             b.setAttribute("href", "/profile");
     }
@@ -83,7 +80,9 @@ function LoginButton() {
     if (loggedUser !== null) {
         return (
             <a href="/profile" id='nav-auth-link'>
-                <button className="mainLoginButton" id='nav-button'>Profile</button>
+                <div className="profile">
+                    <div className='popup'>Profilo</div>
+                </div>
             </a>
         )
     } else {
