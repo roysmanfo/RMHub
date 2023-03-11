@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from "../img/logos/png/white-no-background.png";
 import { createClient } from '@supabase/supabase-js';
 import ENV from '../env';
 
 const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
-let loggedUser: any = null;
 
 export default function Navbar(props: any) {
+    const [user, setUser] = useState<any>(null);
+
+    useEffect(() => {
+        async function fetchUser() {
+            const { data: { user } } = await supabase.auth.getUser();
+            setUser(user);
+        }
+        fetchUser();
+    }, []);
     if (props.index)
         return (
             <nav style={{ background: "transparent", opacity: 0, animation: "light 1s ease 4s forwards" }}>
@@ -25,7 +33,7 @@ export default function Navbar(props: any) {
                         <li>Info</li>
                     </a>
                 </ul>
-                <LoginButton />
+                <LoginButton user={user} />
             </nav>
         );
 
@@ -46,38 +54,18 @@ export default function Navbar(props: any) {
                     <li>Info</li>
                 </a>
             </ul>
-            <LoginButton />
+            <LoginButton user={user} />
         </nav>
     );
 }
-async function getUser() {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (user) {
-        loggedUser = user;
-        let b: HTMLElement | null = document.getElementById("nav-auth-link");
 
-        if (b != null)
-            b.setAttribute("href", "/profile");
-    }
-    else {
-        loggedUser = null;
-        let a: HTMLElement | null = document.getElementById("nav-button");
-        let b: HTMLElement | null = document.getElementById("nav-auth-link");
-
-        if (a != null)
-            a.innerText = "Login";
-        if (b != null)
-            b.setAttribute("href", "/login");
-    }
-
-}
-function LoginButton() {
+function LoginButton(props: any) {
 
     function handleLoginClick() {
         window.location.href = "/login";
     }
-    getUser()
-    if (loggedUser !== null) {
+
+    if (props.user !== null) {
         return (
             <a href="/profile" id='nav-auth-link'>
                 <div className="profile">
@@ -87,10 +75,9 @@ function LoginButton() {
         )
     } else {
         return (
-            <a href="/profile" id="nav-auth-link">
+            <a href="/login" id="nav-auth-link">
                 <button className="mainLoginButton" onClick={handleLoginClick} id='nav-button'>Login</button>
             </a>
         )
     }
 }
-

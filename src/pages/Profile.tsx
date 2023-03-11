@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import { createClient } from '@supabase/supabase-js';
 import ENV from '../env';
@@ -8,19 +8,6 @@ import "../css/profile/profile.css";
 export default function Profile() {
     // Create a single supabase client for interacting with your database
     const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
-    const [user, setUser] = useState<any>();
-
-    useEffect(() => {
-        async function fetchUser() {
-            const { data: user, error } = await supabase.auth.getUser();
-            if (error) {
-                console.log('An error occurred while fetching user data:', error);
-            } else {
-                setUser(user.user);
-            }
-        }
-        fetchUser();
-    });
 
     return (
         <>
@@ -36,8 +23,8 @@ export default function Profile() {
                     {user && <p><b>Email:</b> {user.email}</p>}
                     {user && <p><b>Date of creation:</b> {user.created_at}</p>}
                     {user && <p><b>Role:</b> {user.role}</p>}
-                </div> 
-                <button className="mainLoginButton" onClick={logout}>Logout</button>*/}
+                </div> */}
+                <button className="mainLoginButton" onClick={logout}>Logout</button>
 
             </main>
         </>

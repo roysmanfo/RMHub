@@ -10,7 +10,7 @@ import street from "../img/generic/bg-main_2.jpg"
 import ENV from '../env';
 import { createClient } from '@supabase/supabase-js';
 const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
-async function usr(){
+async function usr() {
     const { data: { user } } = await supabase.auth.getUser()
     console.log(user);
 }
@@ -28,12 +28,12 @@ const CARDS = [
 
 
 export default function Minigiochi() {
-    return(
+    return (
         <>
             <Navbar />
-            <main style={{ flexDirection : "column" }}>
+            <main style={{ flexDirection: "column" }}>
                 <button onClick={usr}> s</button>
-                <p className="font-6 txt-center" style={{marginTop: "10px", width: "100%"}}>Minigiochi</p>
+                <p className="font-6 txt-center" style={{ marginTop: "10px", width: "100%" }}>Minigiochi</p>
                 <section style={{ display: "flex", justifyContent: "space-around" }}>
                     <Card caption={CARDS[0].caption} img={CARDS[0].img} link={CARDS[0].link} id={CARDS[0].id} />
                 </section>
@@ -42,5 +42,5 @@ export default function Minigiochi() {
 
 
         </>
-    )    
+    )
 }

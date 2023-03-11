@@ -41,7 +41,7 @@ class Category extends React.Component{
 
     render(): React.ReactNode {
         return(
-        <a href={"/" + this.name.toLowerCase()}>
+        <a href={"/" + this.name.toLowerCase()} key={key}>
             <article>
                 
                     <p className="font-3">{this.name}</p>
@@ -52,12 +52,13 @@ class Category extends React.Component{
         )
     }
 }
-
+let key: number = 1;
 function CategoryList(){
     let list: any = [];
     
     CATEGORIES.forEach(category => {
         list.push(new Category(category.name, category.description).render());
+        key++;
     });
     
     return(
