@@ -25,15 +25,20 @@ export default function Profile() {
     return (
         <>
             <Navbar />
-            <main className='column x-center'>
-                <h1>Profile</h1>
-                <div>
+            <main className='column no-overflow' style={{ paddingTop: "4rem" }}>
+                <section className='profile-banner' style={{ padding: "3rem" }}>
+                    <div className="profile-pic"></div>
+
+                </section>
+
+                {/* <div>
                     {user && <p><b>ID:</b> {user.id}</p>}
                     {user && <p><b>Email:</b> {user.email}</p>}
                     {user && <p><b>Date of creation:</b> {user.created_at}</p>}
                     {user && <p><b>Role:</b> {user.role}</p>}
-                </div>
-                <button className="mainLoginButton" onClick={logout}>Logout</button>
+                </div> 
+                <button className="mainLoginButton" onClick={logout}>Logout</button>*/}
+
             </main>
         </>
     );

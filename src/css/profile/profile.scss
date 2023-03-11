@@ -1,6 +1,19 @@
 main.column{
     flex-direction: column;
 }
+main.no-overflow{
+    overflow-x: hidden;
+}
 main.x-center{
     align-items: center;
+}
+.profile-pic{
+    height: 25rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 30px;
+    background: #ddd;
+}
+.profile-banner{
+    background: #eee;
+    width: 100%;
 }
