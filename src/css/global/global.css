@@ -140,6 +140,42 @@ footer a:hover {
   background: #181818;
 }
 
+.profile {
+  height: 2.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #222;
+  margin-block: auto;
+  position: relative;
+}
+.profile .popup {
+  position: absolute;
+  bottom: -170%;
+  right: 0;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: 0.5s ease 0.5s;
+  cursor: default;
+  visibility: hidden;
+}
+
+.profile:hover .popup:not(:hover) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.25s ease 0ms;
+  visibility: visible;
+}
+
+a:has(.profile) {
+  display: flex;
+  align-items: center;
+}
+
 .card {
   height: 250px;
   width: 300px;
