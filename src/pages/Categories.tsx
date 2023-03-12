@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -29,10 +30,10 @@ const CATEGORIES = [
 ]
 
 // Cards on the right hand side of the screen
-class Category extends React.Component{
+class Category extends React.Component {
     private name: string;
     private description: string;
-    
+
     constructor(name: string, description: string) {
         super({});
         this.name = name;
@@ -40,36 +41,34 @@ class Category extends React.Component{
     }
 
     render(): React.ReactNode {
-        return(
-        <a href={"/" + this.name.toLowerCase()} key={key}>
-            <article>
-                
+        return (
+            <Link to={"/" + this.name.toLowerCase()} key={key}>
+                <article>
                     <p className="font-3">{this.name}</p>
                     <p>{this.description}</p>
-                
-            </article>
-            </a>
+                </article>
+            </Link>
         )
     }
 }
 let key: number = 1;
-function CategoryList(){
+function CategoryList() {
     let list: any = [];
-    
+
     CATEGORIES.forEach(category => {
         list.push(new Category(category.name, category.description).render());
         key++;
     });
-    
-    return(
+
+    return (
         <>
             {list}
         </>
     );
 }
 
-export default function Categories(){
-    return(
+export default function Categories() {
+    return (
         <>
             <Navbar />
             <main>
@@ -80,12 +79,12 @@ export default function Categories(){
                         Ecco una lista di categorie che puoi trovare nel sito. Scegli quella che ti serve e inizia ad esplorare!
                     </p>
                     <div className="article-wrapper">
-                        <CategoryList /> 
+                        <CategoryList />
                     </div>
                     <Footer />
                 </section>
             </main>
-            
+
         </>
     )
 }

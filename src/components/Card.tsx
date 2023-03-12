@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Card({caption = "", img = "", link = "", id = ""}){
     return(
-        <a href={link} className="card">
+        <Link to={link} className="card">
             <img src={img} className="inner-card" id={id} alt={caption} />
             <div className="caption">{caption}</div>
-        </a>
+        </Link>
     )
 }

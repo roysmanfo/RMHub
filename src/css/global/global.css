@@ -24,6 +24,7 @@ nav {
   display: flex;
   width: -moz-available;
   width: -webkit-fill-available;
+  padding-inline: 1rem;
 }
 
 a {
@@ -33,7 +34,7 @@ a {
   isolation: isolate;
 }
 
-a:not(nav a, footer a)::before {
+a:not(nav a, footer a, .article-wrapper a)::before {
   content: "";
   position: absolute;
   height: 2px;
@@ -45,7 +46,7 @@ a:not(nav a, footer a)::before {
   transition: 0.4s ease;
 }
 
-a:not(nav a, footer a):hover::before {
+a:not(nav a, footer a, .article-wrapper):hover::before {
   height: calc(100% + 5px);
 }
 

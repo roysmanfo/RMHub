@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import "../css/home/home.css"
@@ -35,7 +36,7 @@ function Home() {
                         <p className="weight-5 font-2"><br />
                             Questo è il posto dove caricherò i miei progetti, app e altri contenuti.
                             <br />
-                            <a href="/categories/">Fai un giro</a> e guarda cosa c'è di interessante da vedere.
+                            <Link to="/categories/">Fai un giro</Link> e guarda cosa c'è di interessante da vedere.
                         </p>
                     </div>
                 </div>

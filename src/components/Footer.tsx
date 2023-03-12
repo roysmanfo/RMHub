@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import instagram from '../img/icons/instagram.svg';
 import github from '../img/icons/github.svg';
 import twitter from '../img/icons/twitter.svg';
@@ -9,32 +10,24 @@ export default function Footer(){
                     <div id="explore">
                         <ul className="footer-list col-white">
                             <h3>Esplora</h3>
-                            <a href="/home" rel="noopener noreferrer">
-                                <li>Home</li>
-                            </a>
-                            <a href="/categories" rel="noopener noreferrer">
-                                <li>Categorie</li>
-                            </a>
-                            <a href="/unavaiable" rel="noopener noreferrer">
-                                <li>Docs</li>
-                            </a>
-                            <a href="/info" target="_blank" rel="noopener noreferrer">
-                                <li>Info</li>
-                            </a>
+                            <Link to="/home" rel='noopener noreferrer'><li>Home</li></Link>
+                            <Link to="/categories" rel='noopener noreferrer'><li>Categorie</li></Link>
+                            <Link to="/unavaiable" rel='noopener noreferrer'><li>Docs</li></Link>
+                            <Link to="/info" rel='noopener noreferrer'><li>Info</li></Link>
                         </ul>
                     </div>
                 <div id="socials" >   
                     <ul className="socialList">
                         <h3>Altro</h3>
-                        <a href="https://www.instagram.com/roys_manfo/" target="_blank" rel="noopener noreferrer" title="Instagram">
+                        <Link to="https://www.instagram.com/roys_manfo/" target="_blank" rel="noopener noreferrer" title="Instagram">
                             <li><img src={instagram} alt="Instagram" />Instagram</li>
-                        </a>
-                        <a href="https://github.com/RoysManfo" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        </Link>
+                        <Link to="https://github.com/RoysManfo" target="_blank" rel="noopener noreferrer" title="GitHub">
                             <li><img src={github} alt="GitHub" />GitHub</li>
-                        </a>
-                        <a href="https://twitter.com/roysmanfo_" target="_blank" rel="noopener noreferrer" title="Twitter">
+                        </Link>
+                        <Link to="https://twitter.com/roysmanfo_" target="_blank" rel="noopener noreferrer" title="Twitter">
                             <li><img src={twitter} alt="Twitter" />Twitter</li>
-                        </a>
+                        </Link>
                     </ul>
                 </div>
         </footer>

@@ -24,7 +24,7 @@ export default function Profile() {
                     {user && <p><b>Date of creation:</b> {user.created_at}</p>}
                     {user && <p><b>Role:</b> {user.role}</p>}
                 </div> */}
-                <button className="mainLoginButton" onClick={logout}>Logout</button>
+                <button className="mainLoginButton" style={{ display: "none" }} onClick={logout}>Logout</button>
 
             </main>
         </>
