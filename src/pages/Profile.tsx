@@ -15,7 +15,11 @@ export default function Profile() {
             <main className='column no-overflow' style={{ paddingTop: "4rem" }}>
                 <section className='profile-banner' style={{ padding: "3rem" }}>
                     <div className="profile-pic"></div>
-
+                    <section className="user-info">
+                        <div className="username" style={{ height: "6rem", width: "40rem", background: "#ddd", borderRadius: "10px" }}></div>
+                        <div className="bio" style={{ height: "10rem", width: "30rem", background: "#ddd", borderRadius: "10px" }}></div>
+                        <div className="mood" style={{ height: "2.5rem", width: "15rem", background: "#ddd", borderRadius: "10px" }}></div>
+                    </section>
                 </section>
 
                 {/* <div>
