@@ -45,9 +45,9 @@ nav{
     backdrop-filter: saturate(180%) blur(20px);
     padding: 5px 1rem;
     display: flex;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    padding-inline: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 2rem;
 }
 a{
     color: $info;
@@ -102,6 +102,9 @@ footer{
     a:hover{
         color: #666;
     }
+    h3{
+        margin: 1rem 0;
+    }
 }
 //Classes
 .logo{
@@ -123,6 +126,7 @@ footer{
         text-decoration: none;
         color: $col-nav;
         position: relative;
+        font-weight: 600;
         
         ::before{
             content: "";

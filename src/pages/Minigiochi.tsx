@@ -22,7 +22,7 @@ export default function Minigiochi() {
         <>
             <Navbar />
             <main style={{ flexDirection: "column" }}>
-                <p className="font-6 txt-center" style={{ marginTop: "10px", width: "100%" }}>Minigiochi</p>
+                <p className="font-9 weight-8 txt-center" style={{ marginTop: "10px", width: "100%", textTransform : "uppercase" }}>Minigiochi</p>
                 <section style={{ display: "flex", justifyContent: "space-around" }}>
                     <Card caption={CARDS[0].caption} img={CARDS[0].img} link={CARDS[0].link} id={CARDS[0].id} />
                 </section>

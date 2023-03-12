@@ -71,7 +71,7 @@
   }
 }
 .typingAnim {
-  font-family: monospace;
+  font-family: "Monoton", cursive;
   position: relative;
 }
 
@@ -79,6 +79,9 @@
   margin: 5px;
   width: -moz-max-content;
   width: max-content;
+  font-size: 4em;
+  word-spacing: 2rem;
+  line-height: 6rem;
 }
 
 .typingTxt::before,

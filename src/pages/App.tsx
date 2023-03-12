@@ -26,7 +26,7 @@ function Home() {
             <header className="HomeIntro ">
                 <div style={{ width: "50%", display: "grid", placeItems: "center" }}>
                     <div className="typingAnim">
-                        <p className="typingTxt font-9">Roys Manfo Hub</p>
+                        <p className="typingTxt">Roys Manfo Hub</p>
                     </div>
                     <div></div>
                 </div>

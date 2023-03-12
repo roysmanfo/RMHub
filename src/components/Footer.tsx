@@ -9,7 +9,7 @@ export default function Footer(){
             <h2 className="txt-center font-5" style={{gridArea: "title"}}>Roys Manfo Hub</h2>
                     <div id="explore">
                         <ul className="footer-list col-white">
-                            <h3>Esplora</h3>
+                            <h3 className='font-5'>Esplora</h3>
                             <Link to="/home" rel='noopener noreferrer'><li>Home</li></Link>
                             <Link to="/categories" rel='noopener noreferrer'><li>Categorie</li></Link>
                             <Link to="/unavaiable" rel='noopener noreferrer'><li>Docs</li></Link>
@@ -18,7 +18,7 @@ export default function Footer(){
                     </div>
                 <div id="socials" >   
                     <ul className="socialList">
-                        <h3>Altro</h3>
+                        <h3 className='font-5'>Altro</h3>
                         <Link to="https://www.instagram.com/roys_manfo/" target="_blank" rel="noopener noreferrer" title="Instagram">
                             <li><img src={instagram} alt="Instagram" />Instagram</li>
                         </Link>

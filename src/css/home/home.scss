@@ -77,10 +77,10 @@ $bg-body: #fff;//dfdfdf
     100% {background: transparent;}
 }
 .typingAnim{
-    font-family: monospace;
+    font-family: 'Monoton', cursive;
     position: relative;
 }
-.typingTxt{margin: 5px;width: max-content;}
+.typingTxt{margin: 5px;width: max-content; font-size: 4em;word-spacing: 2rem;line-height: 6rem;}
 
 .typingTxt::before,
 .typingTxt::after{

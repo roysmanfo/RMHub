@@ -22,9 +22,9 @@ nav {
           backdrop-filter: saturate(180%) blur(20px);
   padding: 5px 1rem;
   display: flex;
-  width: -moz-available;
-  width: -webkit-fill-available;
-  padding-inline: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 2rem;
 }
 
 a {
@@ -85,6 +85,9 @@ footer a {
 footer a:hover {
   color: #666;
 }
+footer h3 {
+  margin: 1rem 0;
+}
 
 .logo {
   font-size: 2rem;
@@ -108,6 +111,7 @@ footer a:hover {
   text-decoration: none;
   color: #fff;
   position: relative;
+  font-weight: 600;
 }
 .navList > a ::before {
   content: "";
