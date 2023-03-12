@@ -53,11 +53,14 @@ function LoginButton(props: any) {
 
     if (props.user !== null) {
         return (
-            <Link to="/profile" id='nav-auth-link'>
-                <div className="profile">
-                    <div className='popup'>Profilo</div>
-                </div>
-            </Link>
+
+            <div className="profile">
+                <ul className='popup'>
+                    <Link to="/profile" id='nav-auth-link'>Profilo</Link>
+                    <Link to="" id='nav-auth-link' onClick={logout}>Logout</Link>
+                </ul>
+            </div>
+
         )
     } else {
         return (
@@ -66,4 +69,22 @@ function LoginButton(props: any) {
             </Link>
         )
     }
+}
+async function logout() {
+    // check if user is authenticated
+    const session = supabase.auth.getSession();
+    console.log(session);
+    if (!session) {
+        console.error("Cannot sign out, user is not authenticated.");
+        return;
+    }
+
+    // sign out user
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+        console.error("Error signing out:", error);
+    } else {
+        console.log("User signed out.");
+    }
+    window.location.reload();
 }

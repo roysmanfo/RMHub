@@ -164,24 +164,43 @@ footer{
     position: relative;
 
     .popup{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        list-style: none;
         position: absolute;
-        bottom: -170%;
+        top: 170%;
         right: 0;
-        border-radius: 5px;
         background: #222;
         color: #fff;
         font-weight: 700;
-        padding: 1rem 2rem;
         opacity: 0;
-        transform: translateY(2rem);
+        transform: translateX(20rem);
         transition: .5s ease .5s;
         cursor: default;
         visibility: hidden;
+        border-radius: 5px;
+
+        a{
+            padding: 1rem 2rem;
+            transition: inherit;
+            color: #fff;
+        }
+        a:hover{
+            background: #444;
+        }
+        a:first-child{
+            border-radius: 5px 5px 0 0 !important;
+        }
+        a:last-child{
+            border-radius: 0 0 5px 5px !important;
+        }
     }
 }
-.profile:hover .popup:not(:hover){
+.profile:hover .popup{
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
     transition: .25s ease 0ms;
     visibility: visible;
 }
