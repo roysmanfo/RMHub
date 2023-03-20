@@ -23,11 +23,10 @@ export default function Login() {
             console.log(error);
             return
         }
-        const { error: userError } = await supabase.from('users').insert({ email: email }).single();
-        if (userError) {
-            console.log(userError);
-        }
-        window.location.href = "/profile";
+
+        const { data: { session } } = await supabase.auth.getSession()
+        await createPublicUser(session?.user.id || "");
+        // window.location.href = "/profile";
     }
 
     async function login() {
@@ -40,13 +39,29 @@ export default function Login() {
             console.log(error);
             return
         }
-        const { error: userError } = await supabase.from('users').insert({ email: email }).single();
-        if (userError) {
-            console.log(userError);
-        }
-
         window.location.href = "/profile";
     }
+
+
+    async function createPublicUser(auth_uid: string) {
+        const {data: {user}} = await supabase.auth.getUser();
+        try {
+            const { data, error } = await supabase.rpc('create_public_user', {
+                auth_uid,
+                email: user?.email ?? '',
+                table_name: 'public.users'
+            });
+            if (error) {
+                console.error(error);
+                return null;
+            }
+            return data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
+
 
     return (
         <>
