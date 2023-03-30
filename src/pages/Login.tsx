@@ -43,24 +43,22 @@ export default function Login() {
     }
 
 
-    async function createPublicUser(auth_uid: string) {
-        const {data: {user}} = await supabase.auth.getUser();
+    async function createPublicUser(auth_id: string) {
         try {
-            const { data, error } = await supabase.rpc('create_public_user', {
-                auth_uid,
-                email: user?.email ?? '',
-                table_name: 'public.users'
-            });
-            if (error) {
-                console.error(error);
-                return null;
-            }
-            return data;
-        } catch (error) {
+          const { data, error } = await supabase.from('users').rpc('create_public_user', auth_id);
+      
+          if (error) {
             console.error(error);
             return null;
+          }
+      
+          return data;
+        } catch (error) {
+          console.error(error);
+          return null;
         }
-    }
+      }
+      
 
 
     return (
