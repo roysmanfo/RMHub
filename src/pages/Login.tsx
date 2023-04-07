@@ -24,8 +24,8 @@ export default function Login() {
             return
         }
 
-        const { data: { session } } = await supabase.auth.getSession()
-        await createPublicUser(session?.user.id || "");
+        let username = generateUsername();
+        await createPublicUser(username);
         // window.location.href = "/profile";
     }
 
@@ -42,23 +42,25 @@ export default function Login() {
         window.location.href = "/profile";
     }
 
+    function generateUsername() {
+        return 'user_' + Math.random().toString(36).substring(2, 20) + Math.random().toString(36).substring(2, 20);
+    }
 
-    async function createPublicUser(auth_id: string) {
+    async function createPublicUser(username: string) {
         try {
-          const { data, error } = await supabase.from('users').rpc('create_public_user', auth_id);
-      
-          if (error) {
+            const { data, error } = await supabase.rpc('create_public_user', { username: username });
+            if (error) {
+                console.error(error);
+                return null;
+            }
+
+            return data;
+        } catch (error) {
             console.error(error);
             return null;
-          }
-      
-          return data;
-        } catch (error) {
-          console.error(error);
-          return null;
         }
-      }
-      
+    }
+
 
 
     return (
