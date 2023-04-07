@@ -149,7 +149,7 @@ footer h3 {
   height: 2.5rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: #222;
+  background: linear-gradient(45deg, #000, #222);
   margin-block: auto;
   position: relative;
 }
@@ -200,7 +200,7 @@ a:has(.profile) {
 }
 
 .card {
-  aspect-ratio: 16/9;
+  aspect-ratio: 1/1;
   width: 400px;
   background: #000;
   margin: 0 0.5rem 1rem 0.5rem;
