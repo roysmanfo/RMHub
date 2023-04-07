@@ -213,26 +213,32 @@ a:has(.profile){
     align-items: center;
 }
 .card{
-    height: 250px;
-    width: 300px;
+    aspect-ratio: 16 / 9;
+    width: 400px;
     background: #000;
     margin: 0 0.5rem 1rem 0.5rem;
     text-decoration: none;
     overflow: hidden;
     isolation: isolate;
     
-
     .caption{
-        height: 30%;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 100%;
-        background: #e5e5e5;
+        background: #0009;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #000;
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        transition: .6s ease;
     }
     .inner-card{
-        height: 70%;
+        height: 100%;
         width: 100%;
         position: relative;
         z-index: -1;
@@ -240,6 +246,9 @@ a:has(.profile){
     }
 }
 .card:hover{
+    .caption{
+        opacity: 1;
+    }
     .inner-card{
         scale: 1.5;
     }
