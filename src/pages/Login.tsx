@@ -47,8 +47,10 @@ export default function Login() {
     }
 
     async function createPublicUser(username: string) {
+        const { data: { user } } = await supabase.auth.getUser();
+        while (user?.id == null) { }
         try {
-            const { data, error } = await supabase.rpc('create_public_user', { username: username });
+            const { data, error } = await supabase.rpc('create_public_user', { id: user?.id, username: username });
             if (error) {
                 console.error(error);
                 return null;
