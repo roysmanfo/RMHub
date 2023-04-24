@@ -232,10 +232,10 @@ a:has(.profile) {
   transition: 1s ease;
 }
 
-.card:hover .caption {
+.card:where(:hover, :focus) .caption {
   opacity: 1;
 }
-.card:hover .inner-card {
+.card:where(:hover, :focus) .inner-card {
   scale: 1.5;
 }
 

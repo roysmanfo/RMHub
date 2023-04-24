@@ -245,7 +245,7 @@ a:has(.profile){
         transition: 1s ease;
     }
 }
-.card:hover{
+.card:where(:hover, :focus){
     .caption{
         opacity: 1;
     }
