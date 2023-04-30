@@ -68,12 +68,12 @@ export default function SCF() {
                 </div>
                 <div>
                     <div className="stats">
-                        <p id="gamesPlayed">Partite: 0</p>
-                        <p id="Score">Punteggio: 0</p>
-                        <p id="Wins">Vittorie: 0</p>
-                        <p id="Loses">Sconfitte: 0</p>
-                        <p id="Draws">Pareggi: 0</p>
-                        <p id="WinRate">Win rate: 0</p>
+                        <p id="gamesPlayed">Partite: {games}</p>
+                        <p id="Score">Punteggio: {score}</p>
+                        <p id="Wins">Vittorie: {wins}</p>
+                        <p id="Loses">Sconfitte: {losses}</p>
+                        <p id="Draws">Pareggi: {draws}</p>
+                        <p id="WinRate">Win rate: {winRate || 0}</p>
                     </div>
                 </div>
             </div>
