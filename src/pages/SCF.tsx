@@ -51,9 +51,10 @@ export default function SCF() {
                 setDraws((draws) => draws + 1);
             }
         }
-
+        
         setWinRate(parseFloat((wins / games).toFixed(2)));
     };
+    document.querySelector("body")?.classList.add("SCF");
     return (
         <>  
             <h1 style={{ color: '#fff', fontSize: '5rem' }}>SASSO CARTA FORBICE</h1>
@@ -80,4 +81,3 @@ export default function SCF() {
         </>
     )
 }
-document.querySelector("body")?.classList.add("SCF");
