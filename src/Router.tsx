@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import Minigiochi from "./pages/Minigiochi";
 import Profile from "./pages/Profile";
 import SCF from "./pages/SCF";
+import Slots from "./pages/Slots";
+
 
 export default function Router() {
 	return (
@@ -15,7 +17,8 @@ export default function Router() {
 				<Route path="/home" element={<App />} />
 				<Route path="/categories" element={<Categories />} />
 				<Route path="/minigiochi" element={<Minigiochi />} />
-				<Route path="/minigiochi/sasso-carta-forbice" element={<SCF />} />
+				<Route path="/minigiochi/slot-machine" element={<Slots />} />
+				<Route path="/minigiochi/" element={<SCF />} />
 				<Route path="/profile" element={<Profile />} />
 			</Routes>
 		</BrowserRouter>
