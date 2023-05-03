@@ -9,7 +9,7 @@ export default function SCF() {
     const [draws, setDraws] = useState(0);
     const [score, setScore] = useState(0);
     const [winRate, setWinRate] = useState(0);
-    const [computerChoice, setComputerChoice] = useState("");
+    const [computerChoice, setComputerChoice] = useState("Il computer non ha scelto nulla");
 
     const choices = ["sasso", "carta", "forbice"];
 
@@ -17,7 +17,7 @@ export default function SCF() {
         const computerIndex = Math.floor(Math.random() * 3);
         const computerChoice = choices[computerIndex];
 
-        setComputerChoice(computerChoice);
+        setComputerChoice(`Il computer ha scelto ${computerChoice}`);
         setGames((games) => games + 1);
 
         if (choice === "sasso") {
@@ -57,10 +57,15 @@ export default function SCF() {
     document.querySelector("body")?.classList.add("SCF");
     return (
         <>  
+            <div className="visualstats">
+                <div className="green" style={{ width: `${wins / games * 100}%` }}></div>
+                <div className="gray" style={{ width: `${draws / games * 100}%` }}></div>
+                <div className="red" style={{ width: `${losses / games * 100}%` }}></div>
+            </div>
             <h1 style={{ color: '#fff', fontSize: '5rem' }}>SASSO CARTA FORBICE</h1>
             <div className="game">
                 <div>
-                    <h2 id="SceltaComputer">Il computer ha scelto {computerChoice || "nulla"}</h2>
+                    <h2 id="SceltaComputer">{computerChoice}</h2>
                     <div className="scelte">
                         <button className="sasso scelta" id="sasso" onClick={() => handleChoice("sasso")}>SASSO</button>
                         <button className="carta scelta" id="carta" onClick={() => handleChoice("carta")}>CARTA</button>
