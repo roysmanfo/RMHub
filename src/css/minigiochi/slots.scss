@@ -1,0 +1,34 @@
+body.Slots{
+    background: #000;
+    color: #fff;
+
+
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        height: calc(100vh - 4rem);
+        padding: 2rem 0;
+
+
+        h1{
+            padding: 2rem;
+        }
+        
+        .game{
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 20% 80%;
+            grid-template-rows: auto;
+            padding: 0 3rem;
+            font-size: 1.5rem;
+
+            section{
+                background: #fff;
+                border-radius: 10px;
+                color: #333;
+            }
+        }
+    }
+}
