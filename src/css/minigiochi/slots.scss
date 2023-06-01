@@ -1,3 +1,12 @@
+$island-background: #0009; 
+$header-color: #888;
+
+@mixin island(){
+    background: linear-gradient(to bottom, $island-background 70%, transparent) ;
+    // border: solid 5px #222;
+}
+
+
 main.Slots{
     display: flex;
     flex-direction: column;
@@ -5,6 +14,7 @@ main.Slots{
     text-align: center;
     height: calc(100vh - 4rem);
     padding: 2rem 0;
+    background: linear-gradient(to bottom, #111, #040404);
     
     .game{
         flex-grow: 1;
@@ -20,20 +30,38 @@ main.Slots{
                 height: 4rem;
                 margin: 1rem;
                 border-radius: 10px;
-                background-color: #bbb;
+                background: #111;
+                color: #444;
                 text-align: left;
+                padding: 1rem;
+                font-weight: 500;
+
+                h5{
+                    color: $header-color;
+                    margin: 0;
+                    font-weight: inherit;
+                }
+                p{
+                    margin: 10px 0;
+                    font-size: 1rem
+                }
             }
         }
 
         aside{
+            @include island();
+
             margin-left: 2rem;
+            border-radius: 10px;
+            padding: 1rem;
+
             h1{
                 text-transform: uppercase;
                 font-size: 2rem;
                 margin: 0;
+                padding: 1rem;
+                color: $header-color;
             }
-            background: #000;
-            border-radius: 10px;
         }
         
         section{
@@ -49,10 +77,10 @@ main.Slots{
             }
 
             .playbar{
+                @include island();
                 border-radius: inherit;
                 flex-grow: 3;
                 color: #999;
-                background: #000;
             }
         }
     }

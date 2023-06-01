@@ -5,6 +5,7 @@ main.Slots {
   text-align: center;
   height: calc(100vh - 4rem);
   padding: 2rem 0;
+  background: linear-gradient(to bottom, #111, #040404);
 }
 main.Slots .game {
   flex-grow: 1;
@@ -19,18 +20,33 @@ main.Slots .game .slot-records .record {
   height: 4rem;
   margin: 1rem;
   border-radius: 10px;
-  background-color: #bbb;
+  background: #111;
+  color: #444;
   text-align: left;
+  padding: 1rem;
+  font-weight: 500;
+}
+main.Slots .game .slot-records .record h5 {
+  color: #888;
+  margin: 0;
+  font-weight: inherit;
+}
+main.Slots .game .slot-records .record p {
+  margin: 10px 0;
+  font-size: 1rem;
 }
 main.Slots .game aside {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 70%, transparent);
   margin-left: 2rem;
-  background: #000;
   border-radius: 10px;
+  padding: 1rem;
 }
 main.Slots .game aside h1 {
   text-transform: uppercase;
   font-size: 2rem;
   margin: 0;
+  padding: 1rem;
+  color: #888;
 }
 main.Slots .game section {
   border-radius: 10px;
@@ -44,8 +60,8 @@ main.Slots .game section .slots {
   flex-grow: 8;
 }
 main.Slots .game section .playbar {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 70%, transparent);
   border-radius: inherit;
   flex-grow: 3;
   color: #999;
-  background: #000;
 }/*# sourceMappingURL=slots.css.map */

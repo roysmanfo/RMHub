@@ -7,10 +7,11 @@ export default function Slots() {
             <main className="Slots">
                 <div className="game">
                     <aside>
+                        <h1>Latest Big Wins</h1>
                         <div className="slot-records">
-                        <Record />
-                        <Record />
-                        <Record />
+                            <Record username={"Player1"} amount={6500} />
+                            <Record username={"Player2"} amount={1565} />
+                            <Record username={"Player3"} amount={4000} />
                         </div>
                     </aside>
                     <section>
@@ -24,13 +25,13 @@ export default function Slots() {
 }
 
 
-function Record(){
-    let amount = 500;
+function Record({username= "", amount=0}){
+    // let amount = 500;
     return (
         <div className="record">
             <div className="icon"></div>
-            <h5 style={{color: "#fff", margin: "0"}}>Player1</h5>
-            <p style={{ fontSize: '1rem',fontWeight: 900 , margin: '10px 0' }}>${amount}</p>
+            <h5>{username}</h5>
+            <p>${amount}</p>
         </div>
     )
 }
