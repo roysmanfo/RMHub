@@ -23,7 +23,18 @@ export default function Slots() {
                     </aside>
                     <section>
                         <div className="slots"></div>
-                        <div className="playbar"></div>
+                        <div className="playbar">
+                            <div className="money">
+                                <div className="win">Win</div>
+                                <div className="owned">Owned</div>
+                            </div>
+                        <div className="bet">
+                            <span>$100</span>
+                            <button className="decrease">-</button>
+                            <button className="increase">+</button>
+                        </div>
+                        <button className="play">Play</button>
+                        </div>
                     </section>
                 </div>
             </main>

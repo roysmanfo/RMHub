@@ -73,6 +73,107 @@ main.Slots .game section .playbar {
   border-radius: inherit;
   flex-grow: 3;
   color: #999;
+  display: flex;
+  gap: 3rem;
+  padding: 0 3rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+main.Slots .game section .playbar .play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 10px;
+  color: #444;
+  text-transform: uppercase;
+  transition: 250ms ease;
+  border: none;
+  cursor: pointer;
+  transition: 250ms ease;
+  width: 20%;
+  height: 150px;
+}
+main.Slots .game section .playbar .play:hover {
+  background-color: #181818;
+}
+main.Slots .game section .playbar .bet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 10px;
+  color: #444;
+  text-transform: uppercase;
+  transition: 250ms ease;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  grid-template-areas: "bet bet" "decrease increase";
+  padding: 1rem;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  width: 50%;
+}
+main.Slots .game section .playbar .bet span {
+  margin: 0;
+  grid-area: bet;
+  background: #0b0b0b;
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+main.Slots .game section .playbar .bet button {
+  background: #181818;
+  color: #444;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+}
+main.Slots .game section .playbar .bet button.increase {
+  grid-area: increase;
+}
+main.Slots .game section .playbar .bet button.decrease {
+  grid-area: decrease;
+}
+main.Slots .game section .playbar .bet button:hover {
+  background: #222;
+}
+main.Slots .game section .playbar .money {
+  width: 20%;
+}
+main.Slots .game section .playbar .money .win {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 10px;
+  color: #444;
+  text-transform: uppercase;
+  transition: 250ms ease;
+}
+main.Slots .game section .playbar .money .owned {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 10px;
+  color: #444;
+  text-transform: uppercase;
+  transition: 250ms ease;
+  margin-top: 0.5rem;
 }
 main.Slots ::-webkit-scrollbar {
   display: none;
