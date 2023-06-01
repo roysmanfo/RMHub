@@ -24,8 +24,12 @@ main.Slots{
         padding-right: 3rem;
         font-size: 1.5rem;
         gap: 2rem;
+        overflow: hidden;
         
         .slot-records{
+            overflow-y: scroll;
+            max-height: 100%;
+
             .record{
                 height: 4rem;
                 margin: 1rem;
@@ -35,6 +39,8 @@ main.Slots{
                 text-align: left;
                 padding: 1rem;
                 font-weight: 500;
+                scroll-snap-type: proximity;
+                scroll-snap-stop: always;
 
                 h5{
                     color: $header-color;
@@ -47,6 +53,7 @@ main.Slots{
                 }
             }
         }
+        
 
         aside{
             @include island();
@@ -54,12 +61,14 @@ main.Slots{
             margin-left: 2rem;
             border-radius: 10px;
             padding: 1rem;
+            height: calc(100vh - 4rem);
 
             h1{
                 text-transform: uppercase;
                 font-size: 2rem;
                 margin: 0;
                 padding: 1rem;
+                font-weight: 300;
                 color: $header-color;
             }
         }
@@ -83,5 +92,12 @@ main.Slots{
                 color: #999;
             }
         }
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    ::selection{
+        background: #333;
     }
 }

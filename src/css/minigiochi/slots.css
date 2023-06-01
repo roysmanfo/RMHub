@@ -15,6 +15,11 @@ main.Slots .game {
   padding-right: 3rem;
   font-size: 1.5rem;
   gap: 2rem;
+  overflow: hidden;
+}
+main.Slots .game .slot-records {
+  overflow-y: scroll;
+  max-height: 100%;
 }
 main.Slots .game .slot-records .record {
   height: 4rem;
@@ -25,6 +30,8 @@ main.Slots .game .slot-records .record {
   text-align: left;
   padding: 1rem;
   font-weight: 500;
+  scroll-snap-type: proximity;
+  scroll-snap-stop: always;
 }
 main.Slots .game .slot-records .record h5 {
   color: #888;
@@ -40,12 +47,14 @@ main.Slots .game aside {
   margin-left: 2rem;
   border-radius: 10px;
   padding: 1rem;
+  height: calc(100vh - 4rem);
 }
 main.Slots .game aside h1 {
   text-transform: uppercase;
   font-size: 2rem;
   margin: 0;
   padding: 1rem;
+  font-weight: 300;
   color: #888;
 }
 main.Slots .game section {
@@ -64,4 +73,13 @@ main.Slots .game section .playbar {
   border-radius: inherit;
   flex-grow: 3;
   color: #999;
+}
+main.Slots ::-webkit-scrollbar {
+  display: none;
+}
+main.Slots ::-moz-selection {
+  background: #333;
+}
+main.Slots ::selection {
+  background: #333;
 }/*# sourceMappingURL=slots.css.map */
