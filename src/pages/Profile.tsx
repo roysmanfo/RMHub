@@ -8,25 +8,46 @@ import "../css/profile/profile.css";
 export default function Profile() {
     const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
     const [user, setUser] = useState<User | null>(null);
-
+    const [userData, setUserData] = useState<{[x: string]: any}>({});
+    
     useEffect(() => {
         async function fetchUser() {
-            const { data: { user } } = await supabase.auth.getUser();
-            setUser(user ?? null);
+            if(user === null){
+                const { data: { user } } = await supabase.auth.getUser();
+                setUser(user ?? null);
+            }
         }
         
-        async function fetchUserData() {
-            let { data, error } = await supabase.from('users').select('*').eq('id', user?.id);
-            console.log(data);
-            if(error)
-                console.log(error);
+        async function fetchUserData(): Promise<any> {
+            setUserData({id: user?.id, username: '', biography: '' });
+            if (userData.id === undefined){
+                let { data: userData, error } = await supabase.from('users').select('*').eq('id', user?.id);
+                if (userData){
+                    if(error){}
+                    setUserData(userData[0]);
+                }
+            }
+            else{
+                setUserData(createUserData())
+                return;
+            }
+            async function createUserData(): Promise<{ id: string | undefined; username: string; biography: string; }>{
+                const { data, error } = await supabase
+                .from('users')
+                .insert([
+                    { id: user?.id, username: generateUsername(), biography: '' },
+                ]);
+                return { id: user?.id, username: generateUsername(), biography: '' };
+            }
         }
-
-        fetchUser();
         fetchUserData();
-    }, [user]);
+        fetchUser();
+    }, [supabase, user, userData.id]);
 
-    
+    function generateUsername() {
+        return 'user_' + Math.random().toString(36).substring(2, 20) + Math.random().toString(36).substring(2, 20);
+    }
+
 
     return (
         <>
@@ -35,12 +56,11 @@ export default function Profile() {
                 <section className='profile-banner' style={{ padding: "3rem" }}>
                     <div className="profile-pic"></div>
                     <section className="user-info">
-                        <div className="username" style={{ height: "6rem", width: "40rem", background: "#ddd", borderRadius: "10px" }}>{user?.email}</div>
-                        <div className="bio" style={{ height: "10rem", width: "30rem", background: "#ddd", borderRadius: "10px" }}></div>
-                        <div className="mood" style={{ height: "2.5rem", width: "15rem", background: "#ddd", borderRadius: "10px" }}></div>
+                        <div className="username" style={{ height: "6rem", width: "40rem", background: "#ddd", borderRadius: "10px" }}>{userData.username}</div>
+                        <div className="bio" style={{ height: "10rem", width: "30rem", background: "#ddd", borderRadius: "10px" }}>{userData.biography}</div>
+                        <div className="mood" style={{ height: "2.5rem", width: "15rem", background: "#ddd", borderRadius: "10px" }}>{userData.id}</div>
                     </section>
                 </section>
-
                 {/* <div>
                     {user && <p><b>ID:</b> {user.id}</p>}
                     {user && <p><b>Email:</b> {user.email}</p>}
