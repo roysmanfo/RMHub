@@ -265,6 +265,52 @@ a:has(.profile) {
   margin-block: auto;
 }
 
+@keyframes messageAnimation {
+  0% {
+    top: -100%;
+  }
+  10% {
+    top: 1rem;
+  }
+  90% {
+    top: 1rem;
+  }
+  100% {
+    top: -100%;
+  }
+}
+.message {
+  position: fixed;
+  left: 50%;
+  top: -100%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1.25rem 4rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 50%;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.message.show {
+  animation: messageAnimation 10s ease-out forwards;
+}
+
+.message#message {
+  background: #dbc23e;
+}
+
+.message#error-message {
+  background: #f55;
+}
+
+.message#sucess-message {
+  background: #53cf53;
+}
+
 *::-moz-selection {
   background: rgb(216, 216, 216);
 }

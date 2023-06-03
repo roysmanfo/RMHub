@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import ENV from '../env';
-import "../css/login/login.css";
-import logo from "../img/logos/png/logo-white.png"
+import ENV from '../../env';
+import "../../css/login/login.css";
+import logo from "../../img/logos/png/logo-white.png"
+
+import Message from '../../components/Message';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-    const [errorMessage, setErrorMessage] = useState('No error to report');
-    const [errorMessageUpdated, setErrorMessageUpdated] = useState(false);
-    const [errorClasses, setErrorClasses] = useState('error-message');
 
-    useEffect(() => {
-        if (errorMessageUpdated) {
-            setErrorClasses("error-message show");
-
-            setTimeout(() => {
-                setErrorClasses('error-message');
-            }, 5000);
-            setErrorMessageUpdated(false);
-        }
-    }, [errorMessageUpdated, setErrorMessageUpdated]);
-
+    const [message, setMessage] = useState('No error to report');
+    const [messageType, setMessageType] = useState('message');
+    const [messageUpdated, setMessageUpdated] = useState(false);
+    const [messageClasses, setClasses] = useState('message');
 
     // Create a single supabase client for interacting with your database
     const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
+
+    useEffect(() => {
+        if (messageUpdated) {
+            setClasses("message show");
+    
+            setTimeout(() => {
+                setClasses('message');
+                setMessageType('message')
+            }, 10000);
+            setMessageUpdated(false);
+        }
+    }, [messageUpdated, setMessageUpdated]);
+    
 
     async function signUp() {
         const { error } = await supabase.auth.signUp({
@@ -35,14 +40,15 @@ export default function Login() {
             }
         })
         if (error) {
-            setErrorMessage(error.message);
-            setErrorMessageUpdated(true);
+            setMessage(error.message);
+            setMessageUpdated(true);
+            setMessageType('error');
             return
         }
 
         let username = generateUsername();
-        let successfull = await createPublicUser(username);
-            window.location.href = "/profile";
+        await createPublicUser(username);
+        window.location.href = "/profile";
     }
 
     async function login() {
@@ -52,8 +58,10 @@ export default function Login() {
         })
 
         if (error) {
-            setErrorMessage(error.message);
-            setErrorMessageUpdated(true);
+            setMessage(error.message);
+            setMessageUpdated(true);
+            setMessageType('error');
+
             return
         }
         window.location.href = "/profile";
@@ -73,17 +81,35 @@ export default function Login() {
         return error === null && data != null;
     }
 
-    function ErrorMessage() {
-        return (
-            <div className={errorClasses} id='error-message'>
-                {errorMessage}
-            </div>
-        )
+    async function recoverPassword(){
+        if (email !== ''){
+            let { data, error } = await supabase.auth.resetPasswordForEmail(email)
+            console.log(data);
+            console.log(error);
+
+            if (error){
+                setMessage(error.message);
+                setMessageUpdated(true);
+                setMessageType('error');    
+            } else {   
+                setMessage('Ti abbiamo inviato una email per resettare la password');
+                setMessageUpdated(true);
+                setMessageType('success');
+                window.location.href = '/password-recovery'
+            }
+
+        } else {
+            setMessage('Inserisci la tua email');
+            setMessageUpdated(true);
+            setMessageType('message');
+
+        }
+
     }
 
     return (
         <>
-            <ErrorMessage />
+            <Message type={messageType} messageClasses={messageClasses} message={message} />
             <main className='login-main'>
                 <aside style={{ height: "100%" }}>
                     <img src={logo} alt="Logo" draggable="false" />
@@ -96,6 +122,9 @@ export default function Login() {
                         <button onClick={login}>Login</button>
                         <button onClick={signUp}>Sign Up</button>
                     </div>
+                    <p>Password dimenticata?
+                        <span style={{ marginLeft: '.7rem', color: '#999', cursor: 'pointer' }} onClick={recoverPassword}>Recupera il tuo account</span>
+                    </p>
                 </section>
             </main>
         </>
