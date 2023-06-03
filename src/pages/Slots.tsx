@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/minigiochi/slots.css";
 
 export default function Slots() {
+    const [bet, setBet] = useState(100);
+    const [shownBet, setShownBet] = useState(`$${bet}`);
+
+
+    function update(action: string): void{
+        action === "+" ? setBet(bet + 100) : (bet > 100 ? setBet(bet - 100) : setBet(bet));
+        if(bet >= 1000){
+            setShownBet(`$${(bet / 1000).toFixed(1)}k`);
+        }
+        else{
+            setShownBet(`$${bet}`);
+        }
+    }
+
     return (
         <>
             <main className="Slots">
@@ -29,9 +43,9 @@ export default function Slots() {
                                 <div className="owned">Owned</div>
                             </div>
                         <div className="bet">
-                            <span>$100</span>
-                            <button className="decrease">-</button>
-                            <button className="increase">+</button>
+                            <input type="text" value={shownBet} />
+                            <button className="decrease" onClick={ () => update("-")}>-</button>
+                            <button className="increase" onClick={ () => update("+")}>+</button>
                         </div>
                         <button className="play">Play</button>
                         </div>
@@ -44,7 +58,6 @@ export default function Slots() {
 
 
 function Record({username= "", amount=0}){
-    // let amount = 500;
     return (
         <div className="record">
             <div className="icon"></div>

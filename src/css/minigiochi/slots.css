@@ -121,7 +121,15 @@ main.Slots .game section .playbar .bet {
   margin: 0 auto;
   width: 50%;
 }
-main.Slots .game section .playbar .bet span {
+main.Slots .game section .playbar .bet > *:where(:focus, :active) {
+  outline: #333 solid 2px;
+}
+main.Slots .game section .playbar .bet input {
+  border: none;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+  text-align: inherit;
   margin: 0;
   grid-area: bet;
   background: #0b0b0b;

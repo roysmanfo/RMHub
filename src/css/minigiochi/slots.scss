@@ -46,6 +46,7 @@ main.Slots{
                 margin: 1rem;
                 border-radius: 10px;
                 background: #111;
+                
                 color: #444;
                 text-align: left;
                 padding: 1rem;
@@ -133,7 +134,16 @@ main.Slots{
                     margin: 0 auto;
                     width: 50%;
                     
-                    span{
+                    >*:where(:focus, :active){
+                        outline: #333 solid 2px;
+                    }
+                    
+                    input{
+                        border: none;
+                        font-size: inherit;
+                        color: inherit;
+                        font-family: inherit;
+                        text-align: inherit;
                         margin: 0;
                         grid-area: bet;
                         background: #0b0b0b;
