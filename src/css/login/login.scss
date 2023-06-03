@@ -54,6 +54,29 @@
         }
     }
 }
+
+@keyframes errorMessageAnimation  {
+    0%      {top: -100%;}
+    30%     {top: 1rem;}
+    70%     {top: 1rem;}
+    100%    {top: -100%;} 
+}
+
+.error-message{
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    transform: translateX(-50%);
+    background: #f55;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1.25rem 4rem;
+    border-radius: 10px;
+}
+.error-message.show {
+    animation: errorMessageAnimation 5s ease-out forwards;
+}
 .button-wrapper{
     display: flex;
     gap: 2rem;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import ENV from '../env';
 import "../css/login/login.css";
@@ -7,6 +7,21 @@ import logo from "../img/logos/png/logo-white.png"
 export default function Login() {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const [errorMessage, setErrorMessage] = useState('No error to report');
+    const [errorMessageUpdated, setErrorMessageUpdated] = useState(false);
+    const [errorClasses, setErrorClasses] = useState('error-message');
+
+    useEffect(() => {
+        if (errorMessageUpdated) {
+            setErrorClasses("error-message show");
+
+            setTimeout(() => {
+                setErrorClasses('error-message');
+            }, 5000);
+            setErrorMessageUpdated(false);
+        }
+    }, [errorMessageUpdated, setErrorMessageUpdated]);
+
 
     // Create a single supabase client for interacting with your database
     const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
@@ -20,24 +35,25 @@ export default function Login() {
             }
         })
         if (error) {
-            console.log(error);
+            setErrorMessage(error.message);
+            setErrorMessageUpdated(true);
             return
         }
 
         let username = generateUsername();
         let successfull = await createPublicUser(username);
-        if (successfull)
             window.location.href = "/profile";
     }
 
     async function login() {
-        let { error } = await supabase.auth.signInWithPassword({
+        const { error } = await supabase.auth.signInWithPassword({
             email: email,
             password: pass,
         })
 
         if (error) {
-            console.log(error);
+            setErrorMessage(error.message);
+            setErrorMessageUpdated(true);
             return
         }
         window.location.href = "/profile";
@@ -48,19 +64,26 @@ export default function Login() {
     }
 
     async function createPublicUser(username: string) {
-        const { data: {user}} = await supabase.auth.getUser();
+        const { data: { user } } = await supabase.auth.getUser();
         const { data, error } = await supabase
             .from('users')
             .insert([
-                { id: user?.id , username: username, biography: ''},
+                { id: user?.id, username: username, biography: '' },
             ])
         return error === null && data != null;
     }
 
-
+    function ErrorMessage() {
+        return (
+            <div className={errorClasses} id='error-message'>
+                {errorMessage}
+            </div>
+        )
+    }
 
     return (
         <>
+            <ErrorMessage />
             <main className='login-main'>
                 <aside style={{ height: "100%" }}>
                     <img src={logo} alt="Logo" draggable="false" />
