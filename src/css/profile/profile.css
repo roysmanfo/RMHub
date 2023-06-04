@@ -10,20 +10,19 @@ main.x-center {
   align-items: center;
 }
 
-main {
+section.bg-black {
   background: #000;
 }
-main .profile-banner {
-  width: 100%;
+section.bg-black .profile-banner {
   display: flex;
 }
-main .profile-banner .profile-pic {
+section.bg-black .profile-banner .profile-pic {
   height: 25rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background: linear-gradient(to top right, #111, #000);
 }
-main .profile-banner .user-info {
+section.bg-black .profile-banner .user-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -31,7 +30,7 @@ main .profile-banner .user-info {
   height: 25rem;
   gap: 2rem;
 }
-main .profile-banner .user-info .info {
+section.bg-black .profile-banner .user-info .info {
   background: #080808;
   color: #ddd;
   border-radius: 10px;
@@ -39,20 +38,25 @@ main .profile-banner .user-info .info {
   width: fit-content;
   padding: 1rem 2rem;
 }
-main .profile-banner .user-info .username {
+section.bg-black .profile-banner .user-info .username {
   max-height: 6rem;
   font-weight: 900;
   font-size: 5rem;
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
-main .profile-banner .user-info .bio {
+section.bg-black .profile-banner .user-info .bio {
   max-height: 10rem;
   font-size: 0.9rem;
   width: 30rem;
 }
-main .profile-banner .user-info .membership {
-  min-height: 2.5rem;
-  width: 15rem;
+section.bg-black .profile-banner .user-info .membership {
+  height: -moz-max-content;
+  height: max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0;
+  padding: 0;
 }/*# sourceMappingURL=profile.css.map */

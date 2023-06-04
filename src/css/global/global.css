@@ -149,7 +149,7 @@ footer h3 {
   height: 2.5rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: linear-gradient(45deg, #000, #222);
+  background: linear-gradient(45deg, #111, #000);
   margin-block: auto;
   position: relative;
 }

@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import { User, createClient } from '@supabase/supabase-js';
 import ENV from '../env';
 
+import premium from '../img/icons/premium.svg'
 import "../css/profile/profile.css";
 
 
@@ -48,7 +49,7 @@ export default function Profile() {
 
     // Generate informations to visualize
     let isPremium;
-    userData.isPremium ? isPremium = <div className="info membership"> Premium Account </div> : isPremium = <></>;
+    userData.isPremium ? isPremium = <img className="info membership" alt='Premium logo' title='Premium Account' src={premium} /> : isPremium = <></>;
     
     let biography;
     if(userData.biography === '')
@@ -59,17 +60,16 @@ export default function Profile() {
     return (
         <>
             <Navbar />
-            <main className='column no-overflow' style={{ paddingTop: "4rem" }}>
+            <section className='column no-overflow bg-black' style={{ paddingTop: "4rem" }}>
                 <section className='profile-banner' style={{ padding: "3rem" }}>
                     <div className="profile-pic"></div>
                     <section className="user-info">
-                        <div className="info username">{userData.username}</div>
+                        <div className="info username">{userData.username}{isPremium}</div>
                         <div className="info bio"> {biography} </div>
-                        {isPremium}
                     </section>
                 </section>
 
-            </main>
+            </section>
         </>
     );
 }

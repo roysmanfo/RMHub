@@ -10,10 +10,9 @@ main.x-center {
     align-items: center;
 }
 
-main {
+section.bg-black {
     background: #000;
     .profile-banner {
-        width: 100%;
         display: flex;
 
         .profile-pic {
@@ -47,6 +46,7 @@ main {
                 text-transform: uppercase;
                 display: flex;
                 align-items: center;
+                gap: 2rem;
 
             }
 
@@ -57,8 +57,10 @@ main {
             }
             
             .membership{
-                min-height: 2.5rem;
-                width: 15rem;
+                height: max-content;
+                width: max-content;
+                margin: 0;
+                padding: 0;
             }
         }
     }
