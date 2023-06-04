@@ -11,16 +11,17 @@ main.x-center {
 }
 
 main {
+    background: #000;
     .profile-banner {
-        background: #eee;
         width: 100%;
         display: flex;
 
         .profile-pic {
             height: 25rem;
             aspect-ratio: 1 / 1;
-            border-radius: 30px;
-            background: #ddd;
+            // border-radius: 30px;
+            border-radius: 50%;
+            background: linear-gradient(to top right, #111, #000);
         }
 
         .user-info {
@@ -31,32 +32,33 @@ main {
             height: 25rem;
             gap: 2rem;
 
-            .username{
-                height: 6rem;
-                width: 40rem;
-                background: #ddd;
+            .info{
+                background: #080808;
+                color: #ddd;
                 border-radius: 10px;
+                width: fit-content;
+                padding: 1rem 2rem;
+            }
+
+            .username{
+                max-height: 6rem;
                 font-weight: 900;
-                font-size: 2rem;
+                font-size: 5rem;
                 text-transform: uppercase;
                 display: flex;
                 align-items: center;
-                padding: 0 1rem;
 
             }
 
             .bio{
-                height: 10rem;
+                max-height: 10rem;
+                font-size: .9rem;
                 width: 30rem;
-                background: #ddd;
-                border-radius: 10px;
             }
             
-            .mood{
-                height: 2.5rem;
+            .membership{
+                min-height: 2.5rem;
                 width: 15rem;
-                background: #ddd;
-                border-radius: 10px;
             }
         }
     }

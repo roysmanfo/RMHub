@@ -46,6 +46,16 @@ export default function Profile() {
         return 'user_' + Math.random().toString(36).substring(2, 20) + Math.random().toString(36).substring(2, 20);
     }
 
+    // Generate informations to visualize
+    let isPremium;
+    userData.isPremium ? isPremium = <div className="info membership"> Premium Account </div> : isPremium = <></>;
+    
+    let biography;
+    if(userData.biography === '')
+        biography = <i style={{ color: '#666' }}>Non sappiamo nulla di <span style={{ fontWeight: 700 }}>{userData.username}</span></i>
+    else
+        biography = userData.biography; 
+
     return (
         <>
             <Navbar />
@@ -53,9 +63,9 @@ export default function Profile() {
                 <section className='profile-banner' style={{ padding: "3rem" }}>
                     <div className="profile-pic"></div>
                     <section className="user-info">
-                        <div className="username">{userData.username}</div>
-                        <div className="bio">{userData.biography}</div>
-                        <div className="mood">{userData.id}</div>
+                        <div className="info username">{userData.username}</div>
+                        <div className="info bio"> {biography} </div>
+                        {isPremium}
                     </section>
                 </section>
 
