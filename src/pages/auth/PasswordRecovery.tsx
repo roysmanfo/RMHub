@@ -49,7 +49,14 @@ export default function PasswordRecovery() {
             setMessageUpdated(true);
             setMessageType('error');
         }
-        return data;
+        if (data){
+            setMessage("Account aggiornato");
+            setMessageUpdated(true);
+            setMessageType('success');
+            setTimeout(() => {
+                window.location.href = '/profile'
+            }, 2000)
+        }
     }
 
     return (
