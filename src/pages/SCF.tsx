@@ -54,9 +54,10 @@ export default function SCF() {
         
         setWinRate(parseFloat((wins / games).toFixed(2)));
     };
-    document.querySelector("body")?.classList.add("SCF");
     return (
         <>  
+        <main className="SCF">
+
             <div className="visualstats">
                 <div className="green" style={{ width: `${wins / games * 100}%` }}></div>
                 <div className="gray" style={{ width: `${draws / games * 100}%` }}></div>
@@ -83,6 +84,7 @@ export default function SCF() {
                     </div>
                 </div>
             </div>
+        </main>
         </>
     )
 }
