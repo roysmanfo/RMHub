@@ -1,28 +1,64 @@
-main.column{
+main.column {
     flex-direction: column;
 }
-main.no-overflow{
+
+main.no-overflow {
     overflow-x: hidden;
 }
-main.x-center{
+
+main.x-center {
     align-items: center;
 }
-.profile-pic{
-    height: 25rem;
-    aspect-ratio: 1 / 1;
-    border-radius: 30px;
-    background: #ddd;
-}
-.profile-banner{
-    background: #eee;
-    width: 100%;
-    display: flex;
-}
-.user-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-inline: 2rem;
-    height: 25rem;
-    gap: 2rem;
+
+main {
+    .profile-banner {
+        background: #eee;
+        width: 100%;
+        display: flex;
+
+        .profile-pic {
+            height: 25rem;
+            aspect-ratio: 1 / 1;
+            border-radius: 30px;
+            background: #ddd;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-inline: 2rem;
+            height: 25rem;
+            gap: 2rem;
+
+            .username{
+                height: 6rem;
+                width: 40rem;
+                background: #ddd;
+                border-radius: 10px;
+                font-weight: 900;
+                font-size: 2rem;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                padding: 0 1rem;
+
+            }
+
+            .bio{
+                height: 10rem;
+                width: 30rem;
+                background: #ddd;
+                border-radius: 10px;
+            }
+            
+            .mood{
+                height: 2.5rem;
+                width: 15rem;
+                background: #ddd;
+                border-radius: 10px;
+            }
+        }
+    }
+
 }

@@ -10,24 +10,46 @@ main.x-center {
   align-items: center;
 }
 
-.profile-pic {
+main .profile-banner {
+  background: #eee;
+  width: 100%;
+  display: flex;
+}
+main .profile-banner .profile-pic {
   height: 25rem;
   aspect-ratio: 1/1;
   border-radius: 30px;
   background: #ddd;
 }
-
-.profile-banner {
-  background: #eee;
-  width: 100%;
-  display: flex;
-}
-
-.user-info {
+main .profile-banner .user-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-inline: 2rem;
   height: 25rem;
   gap: 2rem;
+}
+main .profile-banner .user-info .username {
+  height: 6rem;
+  width: 40rem;
+  background: #ddd;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+main .profile-banner .user-info .bio {
+  height: 10rem;
+  width: 30rem;
+  background: #ddd;
+  border-radius: 10px;
+}
+main .profile-banner .user-info .mood {
+  height: 2.5rem;
+  width: 15rem;
+  background: #ddd;
+  border-radius: 10px;
 }/*# sourceMappingURL=profile.css.map */
