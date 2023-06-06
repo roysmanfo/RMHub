@@ -1,0 +1,68 @@
+main.column {
+    flex-direction: column;
+}
+
+main.no-overflow {
+    overflow-x: hidden;
+}
+
+main.x-center {
+    align-items: center;
+}
+
+section.bg-black {
+    background: #000;
+    .profile-banner {
+        display: flex;
+
+        .profile-pic {
+            height: 25rem;
+            aspect-ratio: 1 / 1;
+            // border-radius: 30px;
+            border-radius: 50%;
+            background: linear-gradient(to top right, #111, #000);
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-inline: 2rem;
+            height: 25rem;
+            gap: 2rem;
+
+            .info{
+                background: #080808;
+                color: #ddd;
+                border-radius: 10px;
+                width: fit-content;
+                padding: 1rem 2rem;
+            }
+
+            .username{
+                max-height: 6rem;
+                font-weight: 900;
+                font-size: 5rem;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+
+            }
+
+            .bio{
+                max-height: 10rem;
+                font-size: .9rem;
+                width: 30rem;
+            }
+            
+            .membership{
+                height: max-content;
+                width: max-content;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+}

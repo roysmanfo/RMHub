@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { User, createClient } from '@supabase/supabase-js';
 import ENV from '../env';
@@ -7,8 +8,11 @@ import premium from '../img/icons/premium.svg'
 import "../css/user/user.css";
 
 
-export default function Profile() {
+export default function Userpage() {
     const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
+
+    const { username } = useParams();
+    
     const [user, setUser] = useState<User | null>(null);
     const [userData, setUserData] = useState<{[x: string]: any}>({});
     
@@ -20,11 +24,12 @@ export default function Profile() {
                 const { data: { user } } = await supabase.auth.getUser();
                 setUser(user ?? null);
                 if (user !== null){
-                    let { data: userData, error } = await supabase.from('users').select('*').eq('id', user?.id);
-                    if (userData){                                                
-                        if(error || userData[0] === undefined){                            
-                            setUserData(createUserData(user));
-                                                      
+                    let { data: userData, error } = await supabase.from('users').select('*').eq('username', username?.toLowerCase());
+                    if (userData){
+                        console.log(userData)
+                        console.log(error)
+                        if(error || userData[0] === undefined){
+                            setUserData(createUserData());
                         }
                         setUserData(userData[0]);
                     }
@@ -32,21 +37,20 @@ export default function Profile() {
             }
         }
 
-        async function createUserData(user: User): Promise<{}>{
-            let u_name = generateUsername()
-            const newUserData = { id: user.id, username: u_name, name: u_name, biography: '', isPremium: false, points: 0, suspended: false }
+        async function createUserData(): Promise<{ id: string | undefined; username: string; biography: string; }>{
             const { data, error } = await supabase
             .from('users')
             .insert([
-                newUserData,
-            ]);            
-            return newUserData;
+                { id: user?.id, username: generateUsername(), biography: '' },
+            ]);
+            return { id: user?.id, username: generateUsername(), biography: '' };
         }
+        
         fetchUser();
-    }, [supabase, user]);
+    }, [supabase, user, username]);
 
     function generateUsername() {
-        return 'user_' + Math.random().toString(36).substring(2, 20);
+        return 'user_' + Math.random().toString(36).substring(2, 20) + Math.random().toString(36).substring(2, 20);
     }
 
     // Generate informations to visualize

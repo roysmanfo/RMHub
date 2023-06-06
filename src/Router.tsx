@@ -3,6 +3,7 @@ import App from './pages/App';
 import Categories from "./pages/Categories";
 import Login from "./pages/auth/Login";
 import Minigiochi from "./pages/Minigiochi";
+import Userpage from "./pages/User";
 import Profile from "./pages/Profile";
 import SCF from "./pages/SCF";
 import Slots from "./pages/Slots";
@@ -22,6 +23,7 @@ export default function Router() {
 				<Route path="/minigiochi/sasso-carta-forbice" element={<SCF />} />
 				<Route path="/minigiochi/slot-machine" element={<Slots />} />
 				<Route path="/profile" element={<Profile />} />
+				<Route path="/u/:username" element={<Userpage />} />
 			</Routes>
 		</BrowserRouter>
 	);
