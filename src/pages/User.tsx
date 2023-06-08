@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { User, createClient } from '@supabase/supabase-js';
-import ENV from '../env';
 
 import premium from '../img/icons/premium.svg'
 import "../css/user/user.css";
 
 
 export default function Userpage() {
-    const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
+    const supabase = createClient(process.env.REACT_APP_SUPABASE_URL ?? '', process.env.REACT_APP_SUPABASE_KEY ?? '');
 
     const { username } = useParams();
     

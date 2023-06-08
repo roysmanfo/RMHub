@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { User, createClient } from '@supabase/supabase-js';
-import ENV from '../../env';
 import "../../css/login/login.css";
 import logo from "../../img/logos/png/logo-white.png"
 
 import Message from '../../components/Message';
 
 export default function PasswordRecovery() {
-    const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
+    const supabase = createClient(process.env.REACT_APP_SUPABASE_URL ?? '', process.env.REACT_APP_SUPABASE_KEY ?? '');
     const [user, setUser] = useState<User | null>(null);
     const [pass, setPass] = useState('');
 

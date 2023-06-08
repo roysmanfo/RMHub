@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import ENV from '../../env';
 import "../../css/login/login.css";
 import logo from "../../img/logos/png/logo-white.png"
 
@@ -16,7 +15,7 @@ export default function Login() {
     const [messageClasses, setClasses] = useState('message');
 
     // Create a single supabase client for interacting with your database
-    const supabase = createClient('https://roswbhnqbfckiuczsnrh.supabase.co', ENV.SUPABASE_KEY);
+    const supabase = createClient(process.env.REACT_APP_SUPABASE_URL ?? '', process.env.REACT_APP_SUPABASE_KEY ?? '');
 
     useEffect(() => {
         if (messageUpdated) {
