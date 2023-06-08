@@ -43,7 +43,9 @@ export default function Profile() {
             .from('users')
             .insert([
                 newUserData,
-            ]);            
+            ]);
+            if (data){}    
+            if (error){}    
             return newUserData;
         }
         fetchUser();
