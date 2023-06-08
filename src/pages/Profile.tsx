@@ -7,63 +7,71 @@ import "../css/user/user.css";
 
 export default function Profile() {
     const supabase = createClient(process.env.REACT_APP_SUPABASE_URL ?? '', process.env.REACT_APP_SUPABASE_KEY ?? '');
-    const [user, setUser] = useState<User | null>(null);
-    const [userData, setUserData] = useState<{[x: string]: any}>({});
-    
-    // setUserData({id: undefined, username: '', biography: '' });
-    
+    const [userData, setUserData] = useState<{ [x: string]: any }>({});
+
+    // setUserData({ id: undefined, username: '', biography: '' });
+
     useEffect(() => {
         async function fetchUser() {
+            if (!supabase) return; // Added condition to check if supabase is defined
+
             const session = await supabase.auth.getSession();
-            
+
             // Check if the user is not logged in
-            if(!session.data.session) 
+            if (!session.data.session)
                 window.location.href = '/login';
-                
+
             // If the user is logged in
-            if(session.data.session){
+            if (session.data.session) {
                 const user = session.data.session.user;
-                setUser(user);
-                
-                let { data: userData, error } = await supabase.from('users').select('*').eq('id', user?.id);
-                if (userData){                                                
-                    if(error || userData[0] === undefined){                            
-                        setUserData(createUserData(user));
-                                                    
+
+                let { data, error } = await supabase.from('users').select('*').eq('id', user.id);
+
+                if (error) {
+                    console.log(error);
+                } else {
+                    if (!data || data[0] === undefined) {
+                        const newUserData = await createUserData(user);
+                        setUserData(newUserData);
+                    } else {
+                        setUserData(data[0]);
                     }
-                    setUserData(userData[0]);
                 }
             }
         }
 
-        async function createUserData(user: User): Promise<{}>{
+        async function createUserData(user: User): Promise<{}> {
             let u_name = generateUsername()
             const newUserData = { id: user.id, username: u_name, name: u_name, biography: '', isPremium: false, points: 0, suspended: false }
             const { data, error } = await supabase
-            .from('users')
-            .insert([
-                newUserData,
-            ]);
-            if (data){}    
-            if (error){}    
+                .from('users')
+                .insert([
+                    newUserData,
+                ]);
+            if (data) { }
+            if (error) { }
             return newUserData;
         }
         fetchUser();
-    }, [supabase, user]);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     function generateUsername() {
         return 'user_' + Math.random().toString(36).substring(2, 20);
     }
 
+
+
     // Generate informations to visualize
     let isPremium;
     userData.isPremium ? isPremium = <img className="info membership" alt='Premium logo' title='Premium Account' src={premium} /> : isPremium = <></>;
-    
+
     let biography;
-    if(userData.biography === '')
+    if (userData.biography === '')
         biography = <i style={{ color: '#666' }}>Non sappiamo nulla di <span style={{ fontWeight: 700 }}>{userData.username}</span></i>
     else
-        biography = userData.biography; 
+        biography = userData.biography;
 
     return (
         <>
