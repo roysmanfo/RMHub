@@ -13,7 +13,9 @@ export default function Profile() {
 
     useEffect(() => {
         async function fetchUser() {
-            if (!supabase) return; // Added condition to check if supabase is defined
+            // Added condition to check if supabase is defined
+            if (!supabase)
+                return;
 
             const session = await supabase.auth.getSession();
 
@@ -21,22 +23,29 @@ export default function Profile() {
             if (!session.data.session)
                 window.location.href = '/login';
 
+            // If we already have data there is no need to get it
+            if (userData.id !== undefined)
+                return;
+
             // If the user is logged in
             if (session.data.session) {
                 const user = session.data.session.user;
-
-                let { data, error } = await supabase.from('users').select('*').eq('id', user.id);
-
-                if (error) {
-                    console.log(error);
-                } else {
-                    if (!data || data[0] === undefined) {
-                        const newUserData = await createUserData(user);
-                        setUserData(newUserData);
-                    } else {
-                        setUserData(data[0]);
-                    }
-                }
+                
+                let { data, error } = await supabase.from('users').select();
+                console.log(data, error);
+                console.log(userData.id);
+                
+                
+                // if (error) {
+                //     console.log(error);
+                // } else {
+                //     if (!data || data[0] === undefined) {
+                //         const newUserData = await createUserData(user);
+                //         setUserData(newUserData);
+                //     } else {
+                //         setUserData(data[0]);
+                //     }
+                // }
             }
         }
 
@@ -54,8 +63,8 @@ export default function Profile() {
         }
         fetchUser();
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+        // // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [supabase, userData]);
 
     function generateUsername() {
         return 'user_' + Math.random().toString(36).substring(2, 20);
