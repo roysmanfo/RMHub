@@ -1,20 +1,5 @@
 {
   "projects": {
     "default": "roysmanfohub"
-  },
-  "targets": {
-    "roysmanfohub": {
-      "hosting": {
-        "RMChat": [
-          "RMChat"
-        ],
-        "RMProd": [
-          "RoysManfoProjects"
-        ],
-        "RMHub": [
-          "RoysManfoHub"
-        ]
-      }
-    }
   }
 }
