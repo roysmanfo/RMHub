@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import { User, createClient } from '@supabase/supabase-js';
+import { User } from '@supabase/supabase-js';
 import premium from '../img/icons/premium.svg'
 import "../css/user/user.css";
-import { user } from '../conf/supabase';
+import supabase, { user } from '../conf/supabase';
 import usermanager from '../conf/userdata';
 
 
 export default function Profile() {
-    const supabase = createClient(process.env.REACT_APP_SUPABASE_URL ?? '', process.env.REACT_APP_SUPABASE_KEY ?? '');
     const [userData, setUserData] = useState<{ [x: string]: any }>({});
 
     // setUserData({ id: undefined, username: '', biography: '' });
 
     useEffect(() => {
         async function fetchUser() {
-
 
             // Check if the user is not logged in
             if (!user)
@@ -49,8 +47,7 @@ export default function Profile() {
         }
         fetchUser();
 
-        // // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [supabase, userData]);
+    }, [userData]);
 
     function generateUsername() {
         return 'user_' + Math.random().toString(36).substring(2, 20);
