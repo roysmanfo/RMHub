@@ -1,33 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import { createClient } from '@supabase/supabase-js';
+import supabase from '../conf/supabase';
 
 import premium from '../img/icons/premium.svg'
 import "../css/user/user.css";
 
 
 export default function Userpage() {
-    const supabase = createClient(process.env.REACT_APP_SUPABASE_URL ?? '', process.env.REACT_APP_SUPABASE_KEY ?? '');
-
     const { username } = useParams();
     
     const [userData, setUserData] = useState<{[x: string]: any}>({});
     
-    // setUserData({id: undefined, username: '', biography: '' });
-
     useEffect(() => {
         async function fetchUser() {
-            let { data: userData, error } = await supabase.from('users').select()//.eq('username', username?.trim().toLowerCase());
+            const { data: userData, error } = await supabase.from('users').select().eq('username', username?.trim().toLowerCase()).single();
             
             if (error){
                 // error message
             }
 
-            if(userData){
-                setUserData(userData);
-            }
-            console.log(userData);
+            setUserData(userData ?? {});
         }
         
         fetchUser();
@@ -45,8 +38,8 @@ export default function Userpage() {
         biography = <i style={{ color: '#666' }}>Non sappiamo nulla di <span style={{ fontWeight: 700 }}>{userData.username}</span></i>
     else
         biography = userData.biography; 
-    console.log(userData)
-    return (
+
+        return (
         <>
             <Navbar />
             <section className='column no-overflow bg-black' style={{ paddingTop: "4rem" }}>
