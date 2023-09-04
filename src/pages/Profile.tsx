@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar';
 import { User, createClient } from '@supabase/supabase-js';
 import premium from '../img/icons/premium.svg'
 import "../css/user/user.css";
+import { user } from '../conf/supabase';
+import usermanager from '../conf/userdata';
 
 
 export default function Profile() {
@@ -13,53 +15,37 @@ export default function Profile() {
 
     useEffect(() => {
         async function fetchUser() {
-            // Added condition to check if supabase is defined
-            if (!supabase)
-                return;
 
-            const session = await supabase.auth.getSession();
 
             // Check if the user is not logged in
-            if (!session.data.session)
-                window.location.href = '/login';
+            if (!user)
+                window.location.replace('/login');
 
-            // If we already have data there is no need to get it
-            if (userData.id !== undefined)
-                return;
+            // If the user is logged in            
+            setUserData(usermanager.userdata || {});
 
-            // If the user is logged in
-            if (session.data.session) {
-                const user = session.data.session.user;
-                
-                let { data, error } = await supabase.from('users').select();
-                console.log(data, error);
-                console.log(userData.id);
-                
-                
-                // if (error) {
-                //     console.log(error);
-                // } else {
-                //     if (!data || data[0] === undefined) {
-                //         const newUserData = await createUserData(user);
-                //         setUserData(newUserData);
-                //     } else {
-                //         setUserData(data[0]);
-                //     }
-                // }
+            if (!usermanager.userdata) {
+                const newUserData = await createUserData(usermanager.user);
+                setUserData(newUserData ?? {});
             }
+
         }
 
-        async function createUserData(user: User): Promise<{}> {
-            let u_name = generateUsername()
-            const newUserData = { id: user.id, username: u_name, name: u_name, biography: '', isPremium: false, points: 0, suspended: false }
-            const { data, error } = await supabase
-                .from('users')
-                .insert([
-                    newUserData,
-                ]);
-            if (data) { }
-            if (error) { }
-            return newUserData;
+        async function createUserData(user: User | null): Promise<{ id: string, username: string, name: string, biography: string, isPremium: boolean, points: number, suspended: boolean; } | null> {
+            let u_name = generateUsername();
+            if (user) {
+
+                const newUserData = { id: user.id, username: u_name, name: u_name, biography: '', isPremium: false, points: 0, suspended: false }
+                const { data, error } = await supabase
+                    .from('users')
+                    .insert([
+                        newUserData,
+                    ]);
+                if (data) { }
+                if (error) { }
+                return newUserData;
+            }
+            return null;
         }
         fetchUser();
 

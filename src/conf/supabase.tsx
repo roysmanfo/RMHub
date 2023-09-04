@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { Session, createClient } from "@supabase/supabase-js";
 
 
 const supabase = createClient(
@@ -21,7 +21,8 @@ export async function fetchUser() {
     }
 }
 
-export async function fetchSession() {
+export async function fetchSession() : Promise<Session | null>
+{
     try {
         const {data, error} = await supabase.auth.getSession();
         if (data)
@@ -33,14 +34,15 @@ export async function fetchSession() {
     } catch (error: any) {
         console.log(error.message);
     }
+    return null;
 }
 
-export async function fetchUserData(id: string) {
+export async function fetchUserData(id: string) : Promise<{[x: string]: any;} | null> {
     try {
         const {data, error} = await supabase.from("users").select().eq("id", id).single();
 
         if (data)
-            return data.session;
+            return data;
         
         if (error)
             throw error;
@@ -48,6 +50,7 @@ export async function fetchUserData(id: string) {
     } catch (error: any) {
         console.log(error.message);
     }
+    return null;
 }
 
 
