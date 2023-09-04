@@ -35,7 +35,20 @@ export async function fetchSession() {
     }
 }
 
+export async function fetchUserData(id: string) {
+    try {
+        const {data, error} = await supabase.from("users").select().eq("id", id).single();
 
+        if (data)
+            return data.session;
+        
+        if (error)
+            throw error;
+
+    } catch (error: any) {
+        console.log(error.message);
+    }
+}
 
 
 
@@ -43,5 +56,6 @@ export async function fetchSession() {
 export default supabase;
 export const user = await fetchUser();
 export const session = await fetchSession();
+export const userdata: {[x: string]: any;} | null  = user ? await fetchUserData(user?.id) : null;
 
 
