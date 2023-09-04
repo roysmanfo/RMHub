@@ -30,41 +30,15 @@ const CATEGORIES = [
 ]
 
 // Cards on the right hand side of the screen
-class Category extends React.Component {
-    private name: string;
-    private description: string;
-
-    constructor(name: string, description: string) {
-        super({});
-        this.name = name;
-        this.description = description;
-    }
-
-    render(): React.ReactNode {
-        return (
-            <Link to={"/" + this.name.toLowerCase()} key={key}>
-                <article>
-                    <p className="font-3">{this.name}</p>
-                    <p>{this.description}</p>
-                </article>
-            </Link>
-        )
-    }
-}
-let key: number = 1;
-function CategoryList() {
-    let list: any = [];
-
-    CATEGORIES.forEach(category => {
-        list.push(new Category(category.name, category.description).render());
-        key++;
-    });
-
+function Category({ name, description }: { name: string, description: string }) {
     return (
-        <>
-            {list}
-        </>
-    );
+        <Link to={"/" + name.toLowerCase()}>
+            <article>
+                <p className="font-3">{name}</p>
+                <p>{description}</p>
+            </article>
+        </Link>
+    )
 }
 
 export default function Categories() {
@@ -79,7 +53,7 @@ export default function Categories() {
                         Ecco una lista di categorie che puoi trovare nel sito. Scegli quella che ti serve e inizia ad esplorare!
                     </p>
                     <div className="article-wrapper">
-                        <CategoryList />
+                        {CATEGORIES.map((c) => <Category name={c.name} description={c.description} key={c.name} />)}
                     </div>
                     <Footer />
                 </section>

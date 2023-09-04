@@ -31,8 +31,9 @@ export default function Minigiochi() {
             <main style={{ flexDirection: "column" }}>
                 <p className="font-9 weight-8 txt-center" style={{ marginTop: "10px", width: "100%", textTransform: "uppercase" }}>Minigiochi</p>
                 <section style={{ display: "flex", justifyContent: "center" }}>
-                    <Card caption={CARDS[0].caption} img={CARDS[0].img} link={CARDS[0].link} id={CARDS[0].id} />
-                    <Card caption={CARDS[1].caption} img={CARDS[1].img} link={CARDS[1].link} id={CARDS[1].id} />
+                    {
+                        CARDS.map((c) => <Card caption={c.caption} img={c.img} link={c.link} id={c.id} />)
+                    }
                 </section>
             </main>
         </>
