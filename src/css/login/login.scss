@@ -1,0 +1,78 @@
+*
+.login-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+    background: #000;
+    
+    > *{
+        box-sizing: border-box;
+    }
+
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #fff;
+        padding: 3rem;
+        width: 40%;
+        height: 100%;
+        
+        h1{
+            margin-bottom: 4rem;
+            color: #000;
+            font-weight: 900;
+            font-size: 5rem;
+            text-transform: uppercase;
+        }
+        input{
+            padding: 5px 1rem;
+            font-family: inherit;
+            font-size: 1.1rem;
+            border: none;
+            border-bottom: solid #ccc 1px;
+            margin-bottom: 1rem;
+            height: 1.7rem;
+        }
+
+        input:focus{
+            background-color: #ccc;
+            outline: none;
+        }
+    }
+
+    aside{
+        width: 60%;
+        padding: 3rem;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+}
+.button-wrapper{
+    display: flex;
+    gap: 2rem;
+    
+    button{
+        border: none;
+        background: #000;
+        flex-grow: 1;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: inherit;
+        color: #fff;
+        padding: 15px 2rem;
+        cursor: pointer;
+        transition: 250ms;
+        text-transform: uppercase;
+    }
+
+    button:hover{
+        background: #222;
+    }
+}

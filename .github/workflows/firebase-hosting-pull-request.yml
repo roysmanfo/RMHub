@@ -25,11 +25,10 @@ jobs:
           npm run build
 
       - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v1
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ROYSMANFOHUB }}
           projectId: roysmanfohub
           token: ${{ secrets.FIREBASE_TOKEN }}
           publicDir: 'build'  # Update this to the correct build directory
-

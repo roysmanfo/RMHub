@@ -1,0 +1,191 @@
+$island-background: #0009; 
+$header-color: #888;
+
+@mixin island(){
+    background: linear-gradient(to bottom, $island-background 70%, transparent) ;
+    // border: solid 5px #222;
+}
+@mixin playoptions(){
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background: #111;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    color: #444;
+    text-transform: uppercase;
+    transition: 250ms ease;
+}
+
+main.Slots{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    height: calc(100vh - 4rem);
+    padding: 2rem 0;
+    background: linear-gradient(to bottom, #111, #040404);
+    
+    .game{
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: auto;
+        padding-right: 3rem;
+        font-size: 1.5rem;
+        gap: 2rem;
+        overflow: hidden;
+        
+        .slot-records{
+            overflow-y: scroll;
+            max-height: 100%;
+
+            .record{
+                height: 4rem;
+                margin: 1rem;
+                border-radius: 10px;
+                background: #111;
+                
+                color: #444;
+                text-align: left;
+                padding: 1rem;
+                font-weight: 500;
+                scroll-snap-type: proximity;
+                scroll-snap-stop: always;
+
+                h5{
+                    color: $header-color;
+                    margin: 0;
+                    font-weight: inherit;
+                }
+                p{
+                    margin: 10px 0;
+                    font-size: 1rem
+                }
+            }
+        }
+        
+
+        aside{
+            @include island();
+
+            margin-left: 2rem;
+            border-radius: 10px;
+            padding: 1rem;
+            height: calc(100vh - 4rem);
+
+            h1{
+                text-transform: uppercase;
+                font-size: 2rem;
+                margin: 0;
+                padding: 1rem;
+                font-weight: 300;
+                color: $header-color;
+            }
+        }
+        
+        section{
+            border-radius: 10px;
+            color: #333;
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+            
+            .slots{
+                border-radius: inherit;
+                flex-grow: 8;
+            }
+
+            .playbar{
+                @include island();
+                border-radius: inherit;
+                flex-grow: 3;
+                color: #999;
+                display: flex;
+                gap: 3rem;
+                padding: 0 3rem;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .play{
+                    @include playoptions();
+
+                    border: none;
+                    cursor: pointer;
+                    transition: 250ms ease;
+                    width: 20%;
+                    height: 150px;
+                }
+                .play:hover{
+                    background-color: #181818;
+                }
+
+                .bet{
+                    @include playoptions();
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                    grid-template-areas: "bet bet" "decrease increase";
+                    padding: 1rem;
+                    justify-content: space-between;
+                    width: 80%;
+                    margin: 0 auto;
+                    width: 50%;
+                    
+                    >*:where(:focus, :active){
+                        outline: #333 solid 2px;
+                    }
+                    
+                    input{
+                        border: none;
+                        font-size: inherit;
+                        color: inherit;
+                        font-family: inherit;
+                        text-align: inherit;
+                        margin: 0;
+                        grid-area: bet;
+                        background: #0b0b0b;
+                        border-radius: 3px;
+                        padding: .5rem;
+                    }
+
+                    button{
+                        background: #181818;
+                        color: #444;
+                        border: none;
+                        border-radius: 3px;
+                        font-size: 1.5rem;
+                        padding: .5rem;
+                        width: 100%;
+                        cursor: pointer;
+                    }
+                    button.increase{ grid-area: increase; }
+                    button.decrease{ grid-area: decrease; }
+                    button:hover{
+                        background: #222;
+                    }
+                }
+                .money{
+                    width: 20%;
+                    .win{
+                        @include playoptions();
+                        
+                    }
+                    .owned{
+                        @include playoptions();
+                        margin-top: .5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    ::selection{
+        background: #333;
+    }
+}

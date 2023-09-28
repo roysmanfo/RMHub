@@ -1,0 +1,106 @@
+@import url(keyframes.css);
+/* Variables*/
+/* Styling*/
+.intro {
+  background: #000;
+  height: calc(100vh - 5rem);
+  width: 100%;
+  margin: auto;
+  font-size: 70px;
+  color: #fff;
+  font-weight: 400;
+  align-items: center;
+  justify-content: space-evenly;
+  isolation: isolate;
+  position: relative;
+}
+
+.anim {
+  z-index: -1;
+  background-image: radial-gradient(#0e0e0e, #000);
+  opacity: 0;
+  animation: light 1s ease 4s forwards;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.intro > span {
+  padding: 2rem;
+  font-size: 15rem;
+  opacity: 0;
+}
+
+.l1 {
+  animation: letter1 1s ease 1s forwards;
+}
+
+.l2 {
+  animation: letter2 1s ease 2s forwards;
+}
+
+.l3 {
+  animation: letter2 1s ease 3s forwards;
+}
+
+/*HOME*/
+.HomeIntro {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.HomeWellcome {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+  }
+}
+@keyframes blink {
+  100% {
+    background: transparent;
+  }
+}
+.typingAnim {
+  font-family: "Monoton", cursive;
+  position: relative;
+}
+
+.typingTxt {
+  margin: 5px;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 4em;
+  word-spacing: 2rem;
+  line-height: 6rem;
+}
+
+.typingTxt::before,
+.typingTxt::after {
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.typingTxt::before {
+  background: #fff;
+  animation: typing 1.5s steps(24) forwards 1s;
+}
+
+.typingTxt::after {
+  width: 0.125em;
+  background: #000;
+  animation: typing 1.5s steps(24) forwards 1s, blink 300ms steps(24) infinite;
+}/*# sourceMappingURL=home.css.map */
