@@ -1,0 +1,393 @@
+/* General purpose classes */
+.bg-white {
+  background-color: #F9F9F9;
+}
+
+.bg-yellow {
+  background-color: #FFD112;
+}
+
+.bg-orange {
+  background-color: #FB9300;
+}
+
+.bg-orange-tr {
+  background-color: rgba(251, 147, 0, 0.3333333333);
+}
+
+.bg-soft-black {
+  background-color: #040404;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-raisin-black {
+  background-color: #242424;
+}
+
+.bg-gray {
+  background-color: #555;
+}
+
+.bg-charleston-gray {
+  background-color: #737373;
+}
+
+.bg-darkgray {
+  background-color: #141212;
+}
+
+.bg-background {
+  background-color: #1A1A1A;
+}
+
+.bg-foreground {
+  background-color: #E0E0E0;
+}
+
+.bg-primary-accent {
+  background-color: #FF6B6B;
+}
+
+.bg-secondary-accent {
+  background-color: #56CCF2;
+}
+
+.bg-tertiary-accent {
+  background-color: #6BFF94;
+}
+
+.bg-button-color {
+  background-color: #FF6B6B;
+}
+
+.bg-button-text {
+  background-color: #1A1A1A;
+}
+
+.bg-border-color {
+  background-color: #404040;
+}
+
+.bg-link-color {
+  background-color: #56CCF2;
+}
+
+.bg-link-hover-color {
+  background-color: #6BFF94;
+}
+
+.bg-error-state {
+  background-color: #FF4444;
+}
+
+.bg-success-state {
+  background-color: #00CC66;
+}
+
+.bg-warning-state {
+  background-color: #FFD700;
+}
+
+.bg-red {
+  background-color: rgb(219, 52, 52);
+}
+
+.bg-red-2 {
+  background-color: rgb(235, 28, 28);
+}
+
+.bg-red-3 {
+  background-color: rgb(204, 0, 0);
+}
+
+.bg-orange {
+  background-color: rgb(255, 165, 0);
+}
+
+.bg-orange-2 {
+  background-color: rgb(233, 114, 2);
+}
+
+.bg-orange-3 {
+  background-color: rgb(255, 81, 0);
+}
+
+.bg-yellow {
+  background-color: rgb(255, 255, 1);
+}
+
+.bg-yellow-2 {
+  background-color: rgb(228, 228, 11);
+}
+
+.bg-yellow-3 {
+  background-color: rgb(197, 197, 0);
+}
+
+.bg-green {
+  background-color: rgb(84, 223, 84);
+}
+
+.bg-green-2 {
+  background-color: rgb(46, 179, 46);
+}
+
+.bg-green-3 {
+  background-color: rgb(19, 139, 45);
+}
+
+.bg-blue {
+  background-color: rgb(65, 105, 225);
+}
+
+.bg-blue-2 {
+  background-color: rgb(34, 34, 167);
+}
+
+.bg-blue-3 {
+  background-color: rgb(15, 15, 105);
+}
+
+.bg-purple {
+  background-color: rgb(175, 49, 175);
+}
+
+.bg-purple-2 {
+  background-color: rgb(143, 0, 143);
+}
+
+.bg-purple-3 {
+  background-color: rgb(77, 0, 77);
+}
+
+.bg-pink {
+  background-color: rgb(253, 104, 253);
+}
+
+.bg-pink-2 {
+  background-color: rgb(248, 68, 212);
+}
+
+.bg-pink-3 {
+  background-color: rgb(218, 0, 131);
+}
+
+.bg-gray {
+  background-color: #d0d0d0;
+}
+
+.bg-gray-2 {
+  background-color: #999;
+}
+
+.bg-gray-3 {
+  background-color: #333;
+}
+
+/* Text related classes */
+.txt-left {
+  text-align: left;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-justify {
+  text-align: justify;
+}
+
+.col-white {
+  color: #F9F9F9;
+}
+
+.col-yellow {
+  color: #FFD112;
+}
+
+.col-orange {
+  color: #FB9300;
+}
+
+.col-orange-tr {
+  color: rgba(251, 147, 0, 0.3333333333);
+}
+
+.col-black {
+  color: #000;
+}
+
+.col-soft-black {
+  color: #040404;
+}
+
+.col-raisin-black {
+  color: #242424;
+}
+
+.col-gray {
+  color: #555;
+}
+
+.col-charleston-gray {
+  color: #737373;
+}
+
+.col-darkgray {
+  color: #141212;
+}
+
+.col-background {
+  color: #1A1A1A;
+}
+
+.col-foreground {
+  color: #E0E0E0;
+}
+
+.col-primary-accent {
+  color: #FF6B6B;
+}
+
+.col-secondary-accent {
+  color: #56CCF2;
+}
+
+.col-tertiary-accent {
+  color: #6BFF94;
+}
+
+.col-button-color {
+  color: #FF6B6B;
+}
+
+.col-button-text {
+  color: #1A1A1A;
+}
+
+.col-border-color {
+  color: #404040;
+}
+
+.col-link-color {
+  color: #56CCF2;
+}
+
+.col-link-hover-color {
+  color: #6BFF94;
+}
+
+.col-error-state {
+  color: #FF4444;
+}
+
+.col-success-state {
+  color: #00CC66;
+}
+
+.col-warning-state {
+  color: #FFD700;
+}
+
+.col-red {
+  color: rgb(219, 52, 52);
+}
+
+.col-red-2 {
+  color: rgb(235, 28, 28);
+}
+
+.col-red-3 {
+  color: rgb(204, 0, 0);
+}
+
+.col-orange {
+  color: rgb(255, 165, 0);
+}
+
+.col-orange-2 {
+  color: rgb(233, 114, 2);
+}
+
+.col-orange-3 {
+  color: rgb(255, 81, 0);
+}
+
+.col-yellow {
+  color: rgb(255, 255, 1);
+}
+
+.col-yellow-2 {
+  color: rgb(228, 228, 11);
+}
+
+.col-yellow-3 {
+  color: rgb(197, 197, 0);
+}
+
+.col-green {
+  color: rgb(84, 223, 84);
+}
+
+.col-green-2 {
+  color: rgb(46, 179, 46);
+}
+
+.col-green-3 {
+  color: rgb(19, 139, 45);
+}
+
+.col-blue {
+  color: rgb(65, 105, 225);
+}
+
+.col-blue-2 {
+  color: rgb(34, 34, 167);
+}
+
+.col-blue-3 {
+  color: rgb(15, 15, 105);
+}
+
+.col-purple {
+  color: rgb(175, 49, 175);
+}
+
+.col-purple-2 {
+  color: rgb(143, 0, 143);
+}
+
+.col-purple-3 {
+  color: rgb(77, 0, 77);
+}
+
+.col-pink {
+  color: rgb(253, 104, 253);
+}
+
+.col-pink-2 {
+  color: rgb(248, 68, 212);
+}
+
+.col-pink-3 {
+  color: rgb(218, 0, 131);
+}
+
+.col-gray {
+  color: #d0d0d0;
+}
+
+.col-gray-2 {
+  color: #999;
+}
+
+.col-gray-3 {
+  color: #333;
+}/*# sourceMappingURL=classes.css.map */
