@@ -7,6 +7,7 @@ import "../css/minigiochi/minigiochi.css"
 
 import scissors from "../img/generic/scissors3d.png"
 import slot from "../img/generic/slot-machine.png"
+import swiftcalc from "../img/generic/swiftcalc.png"
 
 const CARDS = [
     {
@@ -20,6 +21,12 @@ const CARDS = [
         "img": slot,
         "link": "slot-machine/",
         "id": "slot-machine"
+    },
+    {
+        "caption": "Swiftcalc",
+        "img": swiftcalc,
+        "link": "https://swiftcalc.vercel.app/",
+        "id": "swiftcalc"
     }
 ]
 
