@@ -32,10 +32,11 @@ html,body{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
-}
-body{
-    background: $bg-body;
-    color: $col;
+    
+    &body{
+        background: $bg-body;
+        color: $col;
+    }
 }
 nav{
     position: fixed;
@@ -54,21 +55,23 @@ a{
     position: relative;
     text-decoration: none;
     isolation: isolate;
-}
-a:not(nav a, footer a, .article-wrapper a)::before {
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: calc(100% + 2px);
-    bottom: -3px;
-    left: 0;
-    z-index: -1;
-    background: #ddd;
-    transition: .4s ease;
-
-}
-a:not(nav a, footer a, .article-wrapper):hover::before{
-    height: calc(100% + 5px);
+    
+    &:not(nav a, footer a, .article-wrapper a)::before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: calc(100% + 2px);
+        bottom: -3px;
+        left: 0;
+        z-index: -1;
+        background: #ddd;
+        transition: .4s ease;
+        
+    }
+    
+    &:not(nav a, footer a, .article-wrapper):hover::before{
+        height: calc(100% + 5px);
+    }
 }
 main{
     display: block;

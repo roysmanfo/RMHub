@@ -1,14 +1,14 @@
-$island-background: #0009; 
+$island-background: #0009;
 $header-color: #888;
 
-@mixin island(){
-    background: linear-gradient(to bottom, $island-background 70%, transparent) ;
-    // border: solid 5px #222;
+@mixin island() {
+    background: linear-gradient(to bottom, $island-background 70%, transparent);
 }
-@mixin playoptions(){
+
+@mixin playoptions() {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     background: #111;
     padding: 1rem 2rem;
     font-size: 2rem;
@@ -18,7 +18,7 @@ $header-color: #888;
     transition: 250ms ease;
 }
 
-main.Slots{
+main.Slots {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -26,8 +26,8 @@ main.Slots{
     height: calc(100vh - 4rem);
     padding: 2rem 0;
     background: linear-gradient(to bottom, #111, #040404);
-    
-    .game{
+
+    .game {
         flex-grow: 1;
         display: grid;
         grid-template-columns: 20% 80%;
@@ -36,17 +36,17 @@ main.Slots{
         font-size: 1.5rem;
         gap: 2rem;
         overflow: hidden;
-        
-        .slot-records{
+
+        .slot-records {
             overflow-y: scroll;
             max-height: 100%;
 
-            .record{
+            .record {
                 height: 4rem;
                 margin: 1rem;
                 border-radius: 10px;
                 background: #111;
-                
+
                 color: #444;
                 text-align: left;
                 padding: 1rem;
@@ -54,20 +54,21 @@ main.Slots{
                 scroll-snap-type: proximity;
                 scroll-snap-stop: always;
 
-                h5{
+                h5 {
                     color: $header-color;
                     margin: 0;
                     font-weight: inherit;
                 }
-                p{
+
+                p {
                     margin: 10px 0;
                     font-size: 1rem
                 }
             }
         }
-        
 
-        aside{
+
+        aside {
             @include island();
 
             margin-left: 2rem;
@@ -75,7 +76,7 @@ main.Slots{
             padding: 1rem;
             height: calc(100vh - 4rem);
 
-            h1{
+            h1 {
                 text-transform: uppercase;
                 font-size: 2rem;
                 margin: 0;
@@ -84,20 +85,20 @@ main.Slots{
                 color: $header-color;
             }
         }
-        
-        section{
+
+        section {
             border-radius: 10px;
             color: #333;
             display: flex;
             gap: 2rem;
             flex-direction: column;
-            
-            .slots{
+
+            .slots {
                 border-radius: inherit;
                 flex-grow: 8;
             }
 
-            .playbar{
+            .playbar {
                 @include island();
                 border-radius: inherit;
                 flex-grow: 3;
@@ -108,7 +109,7 @@ main.Slots{
                 align-items: center;
                 justify-content: space-evenly;
 
-                .play{
+                .play {
                     @include playoptions();
 
                     border: none;
@@ -117,11 +118,12 @@ main.Slots{
                     width: 20%;
                     height: 150px;
                 }
-                .play:hover{
+
+                .play:hover {
                     background-color: #181818;
                 }
 
-                .bet{
+                .bet {
                     @include playoptions();
                     display: grid;
                     grid-template-rows: 1fr 1fr;
@@ -133,12 +135,12 @@ main.Slots{
                     width: 80%;
                     margin: 0 auto;
                     width: 50%;
-                    
-                    >*:where(:focus, :active){
+
+                    >*:where(:focus, :active) {
                         outline: #333 solid 2px;
                     }
-                    
-                    input{
+
+                    input {
                         border: none;
                         font-size: inherit;
                         color: inherit;
@@ -151,7 +153,7 @@ main.Slots{
                         padding: .5rem;
                     }
 
-                    button{
+                    button {
                         background: #181818;
                         color: #444;
                         border: none;
@@ -161,19 +163,29 @@ main.Slots{
                         width: 100%;
                         cursor: pointer;
                     }
-                    button.increase{ grid-area: increase; }
-                    button.decrease{ grid-area: decrease; }
-                    button:hover{
+
+                    button.increase {
+                        grid-area: increase;
+                    }
+
+                    button.decrease {
+                        grid-area: decrease;
+                    }
+
+                    button:hover {
                         background: #222;
                     }
                 }
-                .money{
+
+                .money {
                     width: 20%;
-                    .win{
+
+                    .win {
                         @include playoptions();
-                        
+
                     }
-                    .owned{
+
+                    .owned {
                         @include playoptions();
                         margin-top: .5rem;
                     }
@@ -182,10 +194,11 @@ main.Slots{
         }
     }
 
-    ::-webkit-scrollbar{
+    ::-webkit-scrollbar {
         display: none;
     }
-    ::selection{
+
+    ::selection {
         background: #333;
     }
 }
