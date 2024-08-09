@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import "../css/categories/categories.css"
+import "../css/categories/categories.scss"
 
 
 // Everything routes around this object

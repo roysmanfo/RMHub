@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../css/minigiochi/SCF.css'
+import '../css/minigiochi/scf.scss'
 
 export default function SCF() {
 

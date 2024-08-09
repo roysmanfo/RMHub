@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import "../../css/login/login.css";
+import "../../css/login/login.scss";
 import logo from "../../img/logos/png/logo-white.png"
 
 import Message from '../../components/Message';

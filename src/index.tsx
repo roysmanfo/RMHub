@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/global/global.css';
-import './css/global/classes.css'
+import './css/global/global.scss';
+import './css/global/classes.scss'
 import Router from './Router'
 
 

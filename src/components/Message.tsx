@@ -1,5 +1,5 @@
 import React from 'react';
-import "../css/global/global.css";
+import "../css/global/global.scss";
 
 export default Message;
 

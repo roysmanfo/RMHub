@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import "../css/home/home.css"
+import "../css/home/home.scss"
 
 
 function RootPage() {

@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar"
 import Card from "../components/Card"
 
-import "../css/categories/categories.css"
-import "../css/minigiochi/minigiochi.css"
+import "../css/categories/categories.scss"
+import "../css/minigiochi/minigiochi.scss"
 
 import scissors from "../img/generic/scissors3d.png"
 import slot from "../img/generic/slot-machine.png"
