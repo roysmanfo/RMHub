@@ -82,7 +82,7 @@ h1{
     font-size: 3em;
 }
 footer{
-    background: $bg-nav;
+    background: $col;
     padding: 2em;
     max-width: 100%;
     display: grid;
@@ -263,9 +263,9 @@ a:has(.profile){
     margin-block: auto;
     justify-content: space-evenly;
     
-    img{
-        width: 1.5rem;
-        height: 1.5rem;
+    i{
+        font-size: 1.2rem;
+        color: #fff;
         padding: 0 10px 0 0;
     }
     li{

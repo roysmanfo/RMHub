@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import instagram from '../img/icons/instagram.svg';
-import github from '../img/icons/github.svg';
-import twitter from '../img/icons/twitter.svg';
 export default function Footer(){
     return(
         <footer className="col-white">
@@ -20,13 +17,13 @@ export default function Footer(){
                     <ul className="socialList">
                         <h3 className='font-5'>Altro</h3>
                         <Link to="https://www.instagram.com/roys_manfo/" target="_blank" rel="noopener noreferrer" title="Instagram">
-                            <li><img src={instagram} alt="Instagram" />Instagram</li>
+                            <li><i className="bi bi-instagram" />Instagram</li>
                         </Link>
                         <Link to="https://github.com/RoysManfo" target="_blank" rel="noopener noreferrer" title="GitHub">
-                            <li><img src={github} alt="GitHub" />GitHub</li>
+                            <li><i className="bi bi-github" />GitHub</li>
                         </Link>
                         <Link to="https://twitter.com/roysmanfo_" target="_blank" rel="noopener noreferrer" title="Twitter">
-                            <li><img src={twitter} alt="Twitter" />Twitter</li>
+                            <li><i className="bi bi-twitter" />Twitter</li>
                         </Link>
                     </ul>
                 </div>
