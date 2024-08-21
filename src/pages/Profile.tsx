@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { User } from '@supabase/supabase-js';
 import premium from '../img/icons/premium.svg'
-import "../css/user/user.css";
+import "../css/user/user.scss";
 import supabase, { user } from '../conf/supabase';
 import usermanager from '../conf/userdata';
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/minigiochi/slots.css";
+import "../css/minigiochi/slots.scss";
 
 export default function Slots() {
     const [bet, setBet] = useState(100);

@@ -63,7 +63,6 @@ main {
 .options {
   position: fixed;
   height: 100%;
-  /*height: calc(100vh - 200px);*/
   display: flex;
   flex-direction: column;
 }
@@ -126,4 +125,3 @@ main {
 .summary li:hover {
   transform: scale(1.1);
 }
-/*# sourceMappingURL=categories.css.map */

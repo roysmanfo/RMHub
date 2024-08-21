@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import supabase from '../conf/supabase';
 
 import premium from '../img/icons/premium.svg'
-import "../css/user/user.css";
+import "../css/user/user.scss";
 
 
 export default function Userpage() {

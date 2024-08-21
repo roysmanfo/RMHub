@@ -1,0 +1,146 @@
+:root {
+    --primary: rgb(39, 123, 201);
+    --primary-2: rgb(156 207 255);
+    --secondary: rgb(219, 52, 52);
+    --secondary-2: rgb(255 145 145);
+    --purple: rgb(123, 39, 201);
+    --purple-2: rgb(204 149 255);
+}
+
+html {
+    height: 100%;
+    max-height: 100vh;
+}
+
+.SCF {
+    padding: 0;
+    margin: 0px;
+    height: 100vh;
+    text-align: center;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+    h1 {
+        color: #fff;
+        font-size: 5rem;
+    }
+
+    .game {
+        height: max-content;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .scelte {
+        display: inline-flex;
+        margin: 70px auto 50px auto;
+        font-weight: bolder;
+    }
+
+    .scelta {
+        font-family: inherit;
+        border: none;
+        padding: 18px 20px;
+        margin: 10px 30px;
+        border-radius: 5px;
+        font-size: inherit;
+        cursor: pointer;
+        font-weight: 700;
+        transition: 250ms ease;
+    }
+
+    .scelta:where(:focus, :hover) {
+        background: #222;
+        color: #eee;
+        outline: solid #333 3px;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-areas: "one two" "three four" "five six";
+    }
+
+    .stats p {
+        margin: 10px 50px;
+        background: #fff;
+        border-radius: 5px;
+        padding: 18px 20px;
+        font-weight: bold;
+    }
+
+    .statsTable {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #SceltaComputer {
+        color: #fff;
+    }
+
+    #gamesPlayed {
+        grid-area: one;
+    }
+
+    #Score {
+        grid-area: two;
+    }
+
+    #Wins {
+        grid-area: three;
+    }
+
+    #Losses {
+        grid-area: four;
+    }
+
+    #Draws {
+        grid-area: five;
+    }
+
+    #WinRate {
+        grid-area: six;
+    }
+
+    @keyframes statsbar {
+        to {
+            top: 0;
+        }
+    }
+
+    .visualstats {
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
+        width: 100vw;
+        height: max-content;
+        display: flex;
+        animation: statsbar .5s ease forwards .5s;
+    }
+
+    .visualstats div {
+        height: 1.5rem;
+        background-color: #222;
+        transition: 250ms;
+        width: 33.3333333333%;
+    }
+
+    .visualstats div.green {
+        background: rgb(131, 201, 131);
+    }
+
+    .visualstats div.gray {
+        background: #222;
+    }
+
+    .visualstats div.red {
+        background: #f55;
+    }
+}
