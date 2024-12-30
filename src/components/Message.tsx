@@ -25,7 +25,7 @@ function SuccessMessage({messageClasses, message}: {messageClasses: string, mess
  * - success (green)
  * - message (yellow)
  */
-function Message({type, messageClasses, message}: {type: string, messageClasses: string, message: string}): JSX.Element {
+function Message({type, messageClasses, message}: {type: string, messageClasses: string, message: string}) {
     switch (type){
         case 'error': return <ErrorMessage messageClasses={messageClasses} message={message} />
         case 'success': return <SuccessMessage messageClasses={messageClasses} message={message} />
